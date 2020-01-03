@@ -2,47 +2,32 @@
 <root>
 	<Assembly id="Ptrv41">
 		<Anno id="Reference" group="Basic">
-			<Path>Ptrv40.fa</Path>
+			<Path>C:\workspace\ptrv41\Ptrichocarpa_533_v4.0.fa</Path>
 			<Default>dense</Default>
 			<Format>REF</Format>
 		</Anno>
 		<Anno id="cytoBand" group="Basic">
-			<Path>cytoband.Ptrv41.txt</Path>
+			<Path>C:\workspace\ptrv41\cytoband.Ptrv41.txt</Path>
 			<Default>dense</Default>
 			<Format>CYTO</Format>
 		</Anno>
-		<Anno id="HeteV" group="Basic">
-			<Path>aln.sorted_v0.vcf.gz</Path>
+		<Anno id="SNP" group="Basic">
+			<Path>C:\workspace\ptrv41\aln.sorted_v0.vcf.gz</Path>
 			<Default>hide</Default>
 			<Format>VCF</Format>
 		</Anno>
 		<Anno id="Genes" group="Basic">
-			<Path>GENES.Ptrv41.sorted.txt</Path>
+			<Path>C:\workspace\ptrv41\GENES.Ptrv41.sorted.txt</Path>
 			<Default>hide</Default>
 			<Format>PGENES</Format>
 		</Anno>
 		<Anno id="PtrGene" group="Gene">
-			<Path>Ptrichocarpa_533_v4.1.gene_exons.gff3.sort.bed.gz</Path>
+			<Path>C:\workspace\ptrv41\Ptrichocarpa_533_v4.1.gene_exons.gff3.sort.bed.gz</Path>
 			<Default>pack</Default>
 			<Format>BEDGZ</Format>
 		</Anno>
-		<Anno id="ConservedEle" group="Regulation">
-			<Path>TFBS_from_motif_CE_genome-wide_Ptr.gff.gz</Path>
-			<Default>hide</Default>
-			<Format>GFF</Format>
-		</Anno>
-		<Anno id="TFBS" group="Regulation">
-			<Path>TFBS_from_FunTFBS_genome-wide_Ptr.gff.gz</Path>
-			<Default>hide</Default>
-			<Format>GFF</Format>
-		</Anno>
-		<Anno id="miRNA" group="Regulation">
-			<Path>Populus_trichocarpa.miRNA.gff3.gz</Path>
-			<Default>hide</Default>
-			<Format>GFF</Format>
-		</Anno>
-		<Anno id="SNP" group="Variant">
-			<Path>aln.sorted_v0.vcf.gz</Path>
+		<Anno id="HeteV" group="Variant">
+			<Path>C:\workspace\ptrv41\aln.sorted_v0.vcf.gz</Path>
 			<Default>pack</Default>
 			<Format>VCF</Format>
 		</Anno>
