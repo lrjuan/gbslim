@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="CSS_JS/1.css" /> 
+<link rel="stylesheet" type="text/css" href="CSS_JS/2.css" />
+
+<meta charset="utf-8">
+<title>无标题文档</title>
+</head>
+<body style="min-width:1600px;min-height:1000px;">
+	
+	<div style='height:40px;'>
+		<div id="links" style="margin-left:10%">
+			<ul>
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Genome Browser</a></li>
+				<li><a href="#">Tools</a></li>
+				<li><a href="#">Downloads</a></li>
+				<li><a href="#">About US</a></li>
+			</ul>
+		</div>
+	</div>
+    
+    <div style='background: #669999;box-shadow:1px 5px 10px #333333;border-top-left-radius:10px;border-top-right-radius:10px; width:96%;margin-left:2%;'>
+    <div id="menu" style="height: 80px;">
+    	<div style="float:left;width:300px;margin-left:8%;">
+        	<input type="button" class="menubutton" value="Tutorial" style="border-radius:5px;">
+			<input type="button" id='div' class="menubutton" value="GenomeSelect" style="font-size:12px;border-radius:5px;" >
+			<input type="button" class="menubutton" value="External datas" style="font-size:12px;border-radius:5px;">
+        </div>
+        <div style="float:left;width:300px;height:60px;">
+        	<input type="text" style="margin-top:20px;height:36px;width:200px; float:left;border-top-left-radius:5px;border-bottom-left-radius:5px;" placeholder="Search...">	
+            <div class="menubutton" style="margin-top:20px;width:50px;height:40px;line-height:40px;text-align:center;float:left;border-top-right-radius:5px;border-bottom-right-radius:5px;">Go</div>
+        </div>
+        
+       
+		<div style="float:right;width:310px;margin-right:7%;">
+        	<div id='zoom' style="float:left;">
+				<p>zoom</p>
+			</div>
+            <div class='size'>
+            	<div class="scroll" id="scroll">
+					<div class="bar" id="bar"></div>
+    				<div class="mask" id="mask"></div>
+        		</div>
+            </div>
+        	
+        </div>   
+        <div class="move">
+        	<input type="button" id='move1' class='movebutton' value='<' style="margin-left:8px;border-left:none;border-top:none;border-bottom:none;border-top-left-radius:5px;border-bottom-left-radius:5px;">
+            <input type="button" id='move2' class='movebutton' value='《' style="border-left:none;border-top:none;border-bottom:none;">
+            <input type="button" id='move3' class='movebutton' value='》' style="border-left:none;border-top:none;border-bottom:none;">
+        	<input type="button" id='move4' class='movebutton' value='>' style="border:none;border-bottom-right-radius:5px;border-top-right-radius:5px;">	
+        </div>
+	</div>
+	</div>
+    
+	<div id="cover"></div>
+	<div id="box" style="min-width:1000px;">
+    	<div id="tanchuang">
+			<div id='tctitle'>Genome Select</div>
+            <input type='button' value='x' id='tanchuang-right'>
+		</div>
+       
+        <div class="shuru">
+        	<div>Track Name:</div>
+            <input type="text" id="user_trackName" style="height:25px;width:43%;border-radius:5px;">
+        </div>
+        <div class="shuru">
+            <div>File Format:</div>
+            <select id="sl" style="height:25px;width:20%;">
+ 				<option value='VCF'>VCF</option>
+ 				<option value='GCF'>GCF</option>
+ 			</select>
+         </div>
+         <div class="shuru">
+            <div >Data File:</div>            
+            <input type="text" style="height:25px;width:40%;border-radius:5px" placeholder="URL">
+            <input  type="button" value="Search" style="height:30px;width:50px;" class="buttonblue">
+         
+         </div>
+         <input type="button" id="btn_submit" value="submit" class='buttonblue' style="height:35px;width:20%;margin-top:10px;margin-right:5%;margin-left:25%;font-size:20px;">
+		 <input type="button" value="example" class='buttonblue' style="height:35px;width:20%;margin-top:10px;font-size:20px;">
+         
+         <div style="height:10px;background:#C5D9DC;margin-top:5px;"></div>
+         <div>
+         	<div id='choice1'>
+				
+        	</div>
+            
+            <div id='choice2'>
+         		
+        	</div>
+         </div>
+    </div>
+	
+
+
+	<div style="height:20px;"></div>
+	<div id='location'>
+    	<div id='lo'>
+        	<div class="scroll1" id="scroll1" >
+    			<div class="bar1" id="bar1"></div>
+    			<div class="mask1" id="mask1"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+    	<div id='window'></div>
+    </div>
+    
+    
+   	<div><input type="button" value='update' onclick=refresh()></div>
+    <div><input type="button" value='addexternals' onclick=add()></div>
+    <div><input type="button" value='delete_externals' onclick=remove()></div>
+	
+<script type="text/javascript" src="CSS_JS/jquery-1.11.2.min.js"></script>    
+<script type="text/javascript" src="CSS_JS/hashmap.js"></script>    
+<script type="text/javascript" src="CSS_JS/1.js"></script>	
+<script type="text/javascript" src="CSS_JS/2.js"></script>
+<script type="text/javascript" src="CSS_JS/3.js"></script>
+<script type="text/javascript" src="CSS_JS/whx.js"></script>
+	
+</body>
+</html>
