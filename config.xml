@@ -2,59 +2,48 @@
 <root>
 	<Assembly id="Ptrv41">
 		<Anno id="Reference" group="Basic">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\hg19.fa</Path>
+			<Path>Ptrv40.fa</Path>
 			<Default>dense</Default>
 			<Format>REF</Format>
 		</Anno>
 		<Anno id="cytoBand" group="Basic">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\cytoBand.hg19.txt</Path>
+			<Path>cytoband.Ptrv41.txt</Path>
 			<Default>dense</Default>
 			<Format>CYTO</Format>
 		</Anno>
-		<Anno id="HeteV" group="Variant">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\dbsnp_CEU\21-1409-CEU.vcf.gz</Path>
+		<Anno id="HeteV" group="Basic">
+			<Path>aln.sorted_v0.vcf.gz</Path>
 			<Default>hide</Default>
 			<Format>VCF</Format>
 		</Anno>
 		<Anno id="Genes" group="Basic">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\hgnc.hg19.sorted.txt</Path>
+			<Path>GENES.Ptrv41.sorted.txt</Path>
 			<Default>hide</Default>
-			<Format>HGNC</Format>
+			<Format>PGENES</Format>
 		</Anno>
 		<Anno id="PtrGene" group="Gene">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\refGene.hg19.sorted.anno.gz</Path>
+			<Path>Ptrichocarpa_533_v4.1.gene_exons.gff3.sort.bed.gz</Path>
 			<Default>pack</Default>
 			<Format>BEDGZ</Format>
+		</Anno>
+		<Anno id="ConservedEle" group="Regulation">
+			<Path>TFBS_from_motif_CE_genome-wide_Ptr.gff.gz</Path>
+			<Default>hide</Default>
+			<Format>GFF</Format>
 		</Anno>
 		<Anno id="TFBS" group="Regulation">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\knownGene.hg19.sorted.anno.gz</Path>
-			<Default>dense</Default>
-			<Format>BEDGZ</Format>
-		</Anno>
-		<Anno id="TFBSinProm" group="Regulation">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\ensGene.hg19.sorted.anno.gz</Path>
-			<Default>dense</Default>
-			<Format>BEDGZ</Format>
+			<Path>TFBS_from_FunTFBS_genome-wide_Ptr.gff.gz</Path>
+			<Default>hide</Default>
+			<Format>GFF</Format>
 		</Anno>
 		<Anno id="miRNA" group="Regulation">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\Regulation.hg19.sorted.grf.gz</Path>
+			<Path>Populus_trichocarpa.miRNA.gff3.gz</Path>
 			<Default>hide</Default>
 			<Format>GFF</Format>
 		</Anno>
-		<Anno id="OMIM" group="Disease">
-			<Path>C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\OMIM.hg19.sorted.gdf.gz</Path>
+		<Anno id="SNP" group="Variant">
+			<Path>aln.sorted_v0.vcf.gz</Path>
 			<Default>pack</Default>
-			<Format>GFF</Format>
-		</Anno>
-		<Anno id="dbSNP_CEU" group="dbSNP">
-			<Path key="chr21">C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\dbsnp_CEU\21-1409-CEU.vcf.gz</Path>
-			<Path key="chr22">C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\dbsnp_CEU\22-1409-CEU.vcf.gz</Path>
-			<Default>pack</Default>
-			<Format>VCF</Format>
-		</Anno>
-		<Anno id="1000genome_CEU" group="Personal Genome">
-			<Path key="chr21">C:\workspace\apache-tomcat-9.0.27\webapps\pgbdata\hg19\personal_genome_demo\NA12716.chr21.vcf.gz</Path>
-			<Default>hide</Default>
 			<Format>VCF</Format>
 		</Anno>
 	</Assembly>
