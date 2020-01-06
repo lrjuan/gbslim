@@ -7,6 +7,7 @@
 body{
 	background:#eef7f2;
 	background: -webkit-gradient(linear, left top, left bottom, from(#eef7f2), to(#b9dec9) );
+	background: -moz-linear-gradient(-90deg, #eef7f2, #b9dec9);
 }
 a:link { 
 color:blue; 

@@ -58,10 +58,39 @@ $(function(){
                 var group_id=$(this).parent().parent().attr('id').replace("group","");
                 var track_id = $(this).parent().children("div").attr("id");
                 annotations.get(group_id).get(track_id).setMode(mode_val);
-                //在id为window的div中添加一个div
-                var track_div=$('<div>我就试试</div>')
-                $("#window").append(track_div);
+
+                //功能是当模式改成hide时，要把windows中的track删掉
+                if(mode_val=="hide"){
+                    $("#div"+track_id).remove();
+                    removeTracks(group_id,track_id);
+                }else{
+                    $("#div"+track_id).remove();
+                    //在id为window的div中添加一个div
+                    var track_div=$('<div>'+track_id+mode_val+'</div>')
+                    track_div.attr('id',"div"+track_id);
+                    track_div.attr('name',group_id);
+					track_div.attr('class','whxdiv');
+
+                    var btn_del = $('<button value="删除">x</button>')
+					btn_del.attr('class','whxdelete')
+                    track_div.append(btn_del);
+
+                    btn_del.bind('click',function(){
+                        var group_id=$(this).parent().attr('name');
+                        var track_id=$(this).parent().attr('id').replace("div","")
+                        removeTracks(group_id,track_id);
+                        $(this).parent().remove();
+                        annotations.get(group_id).get(track_id).setMode("hide");
+                        $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                    });
+
+                    $("div[id='div"+track_id+"']").text("")
+                    $("#window").append(track_div);
+                    //为displayItems加入返回数据，在browser区域加入新track的div，把div对象和addTracks返回的对象存入displayItems
+                    addTracks(group_id,track_id,mode_val,track_div)
+                }
             })
+
             if(mode=="pack"){
                 c.find("option[value='pack']").attr("selected",true);
             }else if(mode=="dense"){
@@ -119,21 +148,59 @@ $(function(){
             b.attr('class','slabel');
             b.attr('id',trackKeys_user[j]);
             b.html(trackKeys_user[j]);
+            b.click(function(){
+                var mode = $(this).parent().children("select").val()
+                if(mode=='del'){
+                    $(this).parent().children("select").remove();
+                    $(this).remove();
+                    //需要加点东西
+                    $("#div"+trackKeys_user[j]).remove();
+                    removeExternals($(this).attr("id"));
+                }
+            })
 
             var c = $('<select></select>');
-            c.append("<option value='pack'>hide</option>");
+            c.append("<option value='hide'>hide</option>");
             c.append("<option value='pack'>pack</option>");
             c.append("<option value='dense'>dense</option>");
+            c.append("<option value='del'>delete</option>");
             c.attr('class','mlabel');
 
             var mode= externals.get("User").get(trackKeys_user[j]).getMode();
             c.change(function(){
                 var mode_val = $(this).val();
-                var track_id = $(this).parent().children("div").attr("id");
-                externals.get("User").get(track_id).setMode(mode_val);
-                //在id为window的div中添加一个div
-                var track_div=$('<div>我就试试</div>')
-                $("#window").append(track_div);
+                if(mode_val!="del"){
+                    var track_id = $(this).parent().children("div").attr("id");
+                    externals.get("User").get(track_id).setMode(mode_val);
+                    if(mode_val=='hide'){
+                        $("#div"+track_id).remove();
+                        userRemoveTracks(track_id);
+                    }else{
+						$("#div"+track_id).remove();
+                        //在id为window的div中添加一个div
+                        var track_div=$('<div>'+mode_val+'</div>')
+                        track_div.attr('id',"div"+track_id);
+                        track_div.attr('name',"User");
+						track_div.attr('class','whxdiv');
+
+                        var btn_del = $('<button value="删除">x</button>')
+					    btn_del.attr('class','whxdelete')
+                        track_div.append(btn_del);
+
+                        btn_del.bind('click',function(){
+                            var track_id=$(this).parent().attr('id').replace("div","")
+                            userRemoveTracks(track_id);
+                            $(this).parent().remove();
+                            externals.get("User").get(track_id).setMode("hide");
+                            $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                        });
+
+                        $("div[id='div"+track_id+"']").text("")
+                        $("#window").append(track_div);
+                        //为displayItems加入返回数据，在browser区域加入新track的div，把div对象和addTracks返回的对象存入displayItems
+                        userAddTracks(track_id,mode_val,track_div)
+                    }
+                }
             })
             if(mode=="pack"){
                 c.find("option[value='pack']").attr("selected",true);
@@ -170,7 +237,6 @@ $(function(){
             alert("trackname或者url不能为空")
         }else{
             addExternals(trackname,url,type);
-            alert("成功了")
             var a = $('<div></div>');
 
             a.attr('class','label');
@@ -178,27 +244,93 @@ $(function(){
             b.attr('class','slabel');
             b.attr('id',trackname);
             b.html(trackname);
+            b.click(function(){
+                var mode = $(this).parent().children("select").val()
+                if(mode=='del'){
+                    $(this).parent().children("select").remove();
+                    $(this).remove();
+                    $("#div"+trackKeys_user[j]).remove();
+                    removeExternals($(this).attr("id"));
+                }
+            })
 
             var c = $('<select></select>');
-            c.append("<option selected value='pack'>hide</option>");
+            c.append("<option selected value='hide'>hide</option>");
             c.append("<option value='pack'>pack</option>");
             c.append("<option value='dense'>dense</option>");
+            c.append("<option value='del'>delete</option>");
             c.attr('class','mlabel');
 
             c.change(function(){
                 var mode_val = $(this).val();
-                var track_id = $(this).parent().children("div").attr("id");
-                externals.get("User").get(track_id).setMode(mode_val);
-                //在id为window的div中添加一个div
-                var track_div=$('<div>我就试试</div>')
-                $("#window").append(track_div);
+                if(mode_val!="del"){
+                    var track_id = $(this).parent().children("div").attr("id");
+                    externals.get("User").get(track_id).setMode(mode_val);
+                    if(mode_val=='hide'){
+                        $("#div"+track_id).remove();
+                        userRemoveTracks(track_id);
+                    }else{
+						$("#div"+track_id).remove();
+                        //在id为window的div中添加一个div
+                        var track_div=$('<div>'+mode_val+'</div>')
+                        track_div.attr('id',"div"+track_id);
+                        track_div.attr('name',"User");
+						track_div.attr('class','whxdiv');
+
+                        var btn_del = $('<button value="删除">x</button>')
+					    btn_del.attr('class','whxdelete')
+                        track_div.append(btn_del);
+
+                        btn_del.bind('click',function(){
+                            var track_id=$(this).parent().attr('id').replace("div","")
+                            userRemoveTracks(track_id);
+                            $(this).parent().remove();
+                            externals.get("User").get(track_id).setMode("hide");
+                            $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                        });
+
+                        $("div[id='div"+track_id+"']").text("")
+                        $("#window").append(track_div);
+                        //为displayItems加入返回数据，在browser区域加入新track的div，把div对象和addTracks返回的对象存入displayItems
+                        userAddTracks(track_id,mode_val,track_div)
+                    }
+                }
             })
-           
             a.append(b);
             a.append(c);
             tracks_user.append(a);
-
         }
     });
 
+    //预设display
+	
+	for(var i in keySet){
+    var trackKeys = annotations.get(keySet[i]).keySet();
+    for(var j in trackKeys){
+        var mode_val=$("#"+trackKeys[j]).parent().children("select").val();
+        var group_id = $("#"+trackKeys[j]).parent().parent().attr('id').replace("group","")
+        if(mode_val!="hide"){
+            var track_div=$('<div>'+trackKeys[j]+mode_val+'</div>')
+            track_div.attr('id',"div"+trackKeys[j]);
+			track_div.attr('class',"whxdiv");
+            track_div.attr('name',group_id);
+            var btn_del = $('<button value="删除">x</button>')
+			btn_del.attr('class','whxdelete')
+            track_div.append(btn_del);
+
+            btn_del.bind('click',function(){
+                var group_id=$(this).parent().attr('name');
+                var track_id=$(this).parent().attr('id').replace("div","")
+                removeTracks(group_id,track_id);
+                $(this).parent().remove();
+                annotations.get(group_id).get(track_id).setMode("hide");
+                $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+            });
+
+            $("#window").append(track_div);
+            //为displayItems加入返回数据，在browser区域加入新track的div，把div对象和addTracks返回的对象存入displayItems
+            addTracks(group_id,trackKeys[j],mode_val,track_div)
+        }
+    }
+}
 });

@@ -4,7 +4,7 @@ var externals = new HashMap();
 var displayItems = new HashMap();
 //div ID ='displayItems'+displayItems.keySet()[i];
 var displayarea=new displayArea();
-var predisplay=['OMIM','ensemblGene','knownGene'];
+var predisplay=['OMIM','ensemblGene','konwnGene'];
 var tempXML;
 
 var req = createXMLHttpRequest();
@@ -17,16 +17,15 @@ req.onreadystatechange = Externals_GetReadyStateHandler;
 req.open("GET","servlet/test.do?"+"action=getExternals",false);
 req.send(null);
 
-//querry="action=update&width="+displayarea.getWidth()+"&chr=chr22&start="+21000000+"&end="+21500000;
-//querry="action=update&width="+displayarea.getWidth()+"&chr=chr22&start="+displayarea.getStart()+"&end="+displayarea.getEnd();
-//req.onreadystatechange = Update_GetReadyStateHandler;
-//req.open("GET","servlet/test.do?"+querry,false);
-//req.send(null);
-
+querry="action=update&width="+displayarea.getWidth()+"&chr="+displayarea.getChr()+"&start="+displayarea.getStart()+"&end="+displayarea.getEnd();
+req.onreadystatechange = Update_GetReadyStateHandler;
+req.open("GET","servlet/test.do?"+querry,false);
+req.send(null);
 //alert(tempXML.getElementsByTagName('Sequence')[0].childNodes[0].nodeValue);
+//init();
 function displayArea(){
 	var obj = new Object();
-  	obj.chr='Chr01';
+  	obj.chr='chrM';
   	obj.start=1;
   	obj.end=500;
 	obj.width=document.body.clientWidth;
@@ -35,10 +34,10 @@ function displayArea(){
     return obj.chr;
   	}
 	obj.getStart = function(){
-    return Math.round(obj.start);
+    return obj.start;
   	}
 	obj.getEnd = function(){
-    return Math.round(obj.end);
+    return obj.end;
   	}
 	obj.getWidth = function(){
     return obj.width;
@@ -118,19 +117,17 @@ function Externals_GetReadyStateHandler() {
 function Update_GetReadyStateHandler() {
 	if (req.readyState == 4&&req.status == 200){
 		var XmlNode=req.responseXML;
-		//var temp=XmlNode.getElementsByTagName('Start')[0].childNodes[0].nodeValue;
-		//displayarea.setStart(temp);
-		//temp=XmlNode.getElementsByTagName('End')[0].childNodes[0].nodeValue;
-		//displayarea.setEnd(temp);
-		//temp=XmlNode.getElementsByTagName('Chromosome')[0].childNodes[0].nodeValue;
-		//displayarea.setChr(temp);
+		var temp=XmlNode.getElementsByTagName('Start')[0].childNodes[0].nodeValue;
+		displayarea.setStart(temp);
+		temp=XmlNode.getElementsByTagName('End')[0].childNodes[0].nodeValue;
+		displayarea.setEnd(temp);
+		temp=XmlNode.getElementsByTagName('Chromosome')[0].childNodes[0].nodeValue;
+		displayarea.setChr(temp);
 		//alert(displayarea.getChr()+displayarea.getStart()+displayarea.getEnd());
-		//temp=XmlNode.getElementsByID('OMIM')[0].getElementsByTagName('F')[1].childNodes[0].nodeValue;
-		
-		temp=XmlNode.getElementById('OMIM').id;
-		alert(temp);
+		//temp=XmlNode.getElementsByTagName('E')[0].getElementsByTagName('T')[0].childNodes[0].nodeValue;
+		//alert(temp);
 		//var str=XmlNode.getElementsByTagName('Sequence')[0].childNodes[0].nodeValue;
-
+		tempXML=XmlNode;
 	}
 }
 function createTrack(name,mode,type){
@@ -182,6 +179,15 @@ function refresh(){
 	
 	alert(str);
 }
+function init(){
+	var dpitem=new displayitem();
+	dpitem.setName('OMIM');
+	displayItems.put('OMIM',dpitem); 
+	//alert(displayItems.get('OMIM').getMode());
+	dpitem.createXML();
+	update_displayItems();
+	//alert(dpitem.XMLnode.getElementsByTagName('Sequence')[0].childNodes[0].nodeValue);
+}
 
 function displayitem(a,b,c){
    var obj = new Object();
@@ -200,9 +206,6 @@ function displayitem(a,b,c){
    obj.getXMLnode = function(){
       return obj.XMLnode;
    }
-   obj.setXMLnode = function(temp){
-      obj.XMLnode=temp;
-   }
    return obj
 }
 function addTracks(group,track,mode,track_div){
@@ -215,8 +218,8 @@ function addTracks(group,track,mode,track_div){
 function getTracks(request,track,track_div){
    if (request.readyState == 4&&request.status == 200) {
       var a = request.responseXML;
-      var ditem = displayitem(track,track_div,a);
-      displayItems.put(track,ditem);
+      var displayitem = displayitem(track,track_div,a);
+      displayItems.put(track,displayitem);
    }
 }
 function removeTracks(group,track){
@@ -232,22 +235,6 @@ function delDisplayItem(track){
    displayItems.remove(track);
 }
 
-function userAddTracks(track,mode,track_div){
-   var request = externals.get("User").get(track).getRequest();
-   querry="action=addTracks&tracks="+track+"&modes="+mode;
-   request.onreadystatechange =function(){getTracks(request,track,track_div);};
-   request.open("GET","servlet/test.do?"+querry,true);
-   request.send(null);
-}
-
-function userRemoveTracks(track){
-   var request = externals.get("User").get(track).getRequest();
-   querry="action=removeTracks&tracks="+track;
-
-   request.onreadystatechange = function(){delDisplayItem(track);};
-   request.open("GET","servlet/test.do?"+querry,true);
-   request.send(null);
-}
 window.onresize = function(){
 	displayarea.setWidth(document.body.clientWidth);
 }

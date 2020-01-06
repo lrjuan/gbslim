@@ -1,7 +1,7 @@
 @charset "utf-8";
 .move{
 	float:right;
-	width:320px;
+	width:450px;
 	height:50px;
 	margin-top:18px;
 	margin-right:10px;
@@ -114,4 +114,32 @@
 }
 .displayItemsDiv{
 	border:1px solid #000;
+}
+#canvas{
+ height:100px;
+ width:100%;
+ border:none;
+ border:1px solid #aaa;
+ margin:0;
+ display:block;
+ }
+ 
+#cv{
+ height:200px;
+ width:100%;
+ border:none;
+ border:1px solid #aaa;
+ margin:0;
+ display:block;
+ }
+ 
+.whxdiv{
+	border:1px solid #000;
+	height:50px;
+	margin-top:5px;
+}
+.whxdelete{
+	height:30px;
+	width:30px;
+	margin-top:10px;
 }

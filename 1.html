@@ -21,9 +21,9 @@
 		</div>
 	</div>
     
-    <div style='background: #669999;box-shadow:1px 5px 10px #333333;border-top-left-radius:10px;border-top-right-radius:10px; width:96%;margin-left:2%;'>
+    <div style='background: #669999;box-shadow:1px 5px 15px #333333;border-top-left-radius:10px;border-top-right-radius:10px; width:96%;margin-left:2%;'>
     <div id="menu" style="height: 80px;">
-    	<div style="float:left;width:300px;margin-left:8%;">
+    	<div style="float:left;width:300px;margin-left:4%;">
         	<input type="button" class="menubutton" value="Tutorial" style="border-radius:5px;">
 			<input type="button" id='div' class="menubutton" value="GenomeSelect" style="font-size:12px;border-radius:5px;" >
 			<input type="button" class="menubutton" value="External datas" style="font-size:12px;border-radius:5px;">
@@ -34,7 +34,7 @@
         </div>
         
        
-		<div style="float:right;width:310px;margin-right:7%;">
+		<div style="float:right;width:310px;margin-right:3%;">
         	<div id='zoom' style="float:left;">
 				<p>zoom</p>
 			</div>
@@ -47,10 +47,16 @@
         	
         </div>   
         <div class="move">
-        	<input type="button" id='move1' class='movebutton' value='<' style="margin-left:8px;border-left:none;border-top:none;border-bottom:none;border-top-left-radius:5px;border-bottom-left-radius:5px;">
-            <input type="button" id='move2' class='movebutton' value='《' style="border-left:none;border-top:none;border-bottom:none;">
-            <input type="button" id='move3' class='movebutton' value='》' style="border-left:none;border-top:none;border-bottom:none;">
-        	<input type="button" id='move4' class='movebutton' value='>' style="border:none;border-bottom-right-radius:5px;border-top-right-radius:5px;">	
+        	<button type="button" id='move1' class='movebutton' value='-10' style="margin-left:8px;border-left:none;border-top:none;
+        	border-bottom:none;border-top-left-radius:5px;border-bottom-left-radius:5px;">-10</button>
+			<button type="button" id='move2' class='movebutton' value='-5' style="border-left:none;border-top:none;border-bottom:none;">-5</button>
+			<button type="button" id='move3' class='movebutton' value='+5' style="border-left:none;border-top:none;border-bottom:none;">+5</button>
+			<button type="button" id='move4' class='movebutton' value='+10' style="border:none;border-bottom-right-radius:5px;border-top-right-radius:5px;">+10</button>
+
+            <button type="button" id='left' class='movebutton' value='+5' style="border-left:none;border-top:none;border-bottom:none;border-bottom-left-radius:5px;border-top-left-radius:5px;"><<</button>
+			<button type="button" id='right' class='movebutton' value='+10' style="border:none;border-bottom-right-radius:5px;border-top-right-radius:5px;">>></button>
+
+
         </div>
 	</div>
 	</div>
@@ -107,7 +113,14 @@
     </div>
     
     <div>
-    	<div id='window'></div>
+    	<div id='window'>
+        	<!--<div id='can'>
+      			<canvas id="canvas" width="1550" height="400"></canvas>
+      		</div>-->
+            <div class="sequence">
+				<canvas width=1200 height=200 id="canvas" style="display:block;margin:0 auto;border:1px solid #aaa"></canvas>
+    		</div> 
+        </div>
     </div>
     
     
@@ -121,6 +134,9 @@
 <script type="text/javascript" src="CSS_JS/2.js"></script>
 <script type="text/javascript" src="CSS_JS/3.js"></script>
 <script type="text/javascript" src="CSS_JS/whx.js"></script>
-	
+
+
+<script type="text/javascript" src="JS/getdata.js"></script>
+<script type="text/javascript" src="CSS_JS/su2.js"></script>	
 </body>
 </html>
