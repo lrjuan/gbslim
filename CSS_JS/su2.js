@@ -6,8 +6,7 @@
 	var start=displayarea.getStart(); //放缩坐标区间（0-1000）
 
     var end=displayarea.getEnd();
-    var long=displayarea.getEnd()-displayarea.getStart()+1;
-    //alert(long)
+    var long=displayarea.getEnd()-displayarea.getStart();
 	var ctx = canvas.getContext('2d');
 	var move1=document.getElementById("move1");
 	var move2=document.getElementById("move2");
@@ -17,8 +16,16 @@
 	var left=document.getElementById("left");
 	var right = document.getElementById("right");
 	
-	getSeqData(10000000,displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());
-
+	//初始 画
+	getSeqData(displayarea.getWidth(),displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());
+	
+	var scroll1 = document.getElementById("scroll1");
+	var width = scroll1.clientWidth||scroll1.offsetWidth;
+	var bar1 = document.getElementById('bar1');
+	var a=displayarea.getStart()/Math.round(chrLength.get(displayarea.getChr()));
+	bar1.style.left=width*a+'px';
+	var b=(displayarea.getEnd()-displayarea.getStart())/Math.round(chrLength.get(displayarea.getChr()));
+	bar1.style.width=width*b+'px';
 	window.onload = function(){
 
 	 //计算各操作
@@ -26,41 +33,37 @@
 
 		//缩小10
 		var handleScroll1 = function(){
+			var temp=long;
 			long=long*10;
-            if(long>10000){
-            	alert("超出范围")
-			}else {
-				start = start;
+				start = start-temp*4.5;
+				if(start<=0){start=1;}
 				end = start + long;
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
 				update(displayarea.getChr(), start, end);
-			}
-
 		};
 		//缩小5
 		var handleScroll2 = function(){
-
+			var temp=long;
 			long=long*5;
-			if(long>10000){
-            	alert("超出范围")
-			}else {
-				start = start;
+	
+				start = start-temp*2;
+				if(start<=0){start=1;}
 				end = start + long;
 				//alert(start);
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
 				update(displayarea.getChr(), start, end);
-			}
-
+			
 		};
 		//放大5
 		var handleScroll3 = function(){
-			long=long/5
-			if(long<10){
-            	alert("超出范围")
-			}else {
-				start = start;
+			long=Math.round(long/5)
+			if(long <10){
+				long=10;
+			}
+			else{
+				start = start+long*2;
 				end = start + long;
 				//alert(start);
 				//alert(end);
@@ -71,11 +74,12 @@
 		};
 		//放大10
 		var handleScroll4 = function(){
-			long=long/10;
-			if(long<10){
-            	alert("超出范围")
-			}else {
-				start = start;
+			long=Math.round(long/10)
+			if(long <10){
+				long=10;
+			}
+			else{
+				start = start+long*4.5;
 				end = start + long;
 				//alert(start);
 				//alert(end);
@@ -86,31 +90,99 @@
 		};
 		//左移20
 		var handleScroll6 = function(){
-			if(start>1){
-				start=start-20;
-				end=end-20;
-				ctx.translate((end+start)/2,lastY);
-				update(displayarea.getChr(),start,end);
+			if(start-Math.round(long/2)>=0){
+				start=start-Math.round(long/2);
+				end=end-Math.round(long/2);
 			}
+			else{
+				start=0;
+				end=long;
+			}
+			ctx.translate((end+start)/2,lastY);
+			update(displayarea.getChr(),start,end);
 			
 		};
 		//右移20
 		var handleScroll7 = function(){
-			start=start+20;
-			end=end+20;
-			if(start<0){start=0}
-			//alert(start);
-			//alert(end);
+			if(Math.round(chrLength.get(displayarea.getChr()))<end+Math.round(long/2)){
+				start+=chrLength.get(displayarea.getChr())-end;
+				end=chrLength.get(displayarea.getChr());
+			}
+			else{
+				start=start+Math.round(long/2);
+				end=end+Math.round(long/2);
+			}
+			//if(start<0){start=0}
 			ctx.translate((end+start)/2,lastY);
             update(displayarea.getChr(),start,end);
 		};
+		
+		var handleScroll8 = function(){
+			if(start-Math.round(long/10)>=0){
+				start=start-Math.round(long/10);
+				end=end-Math.round(long/10);
+				
+			}
+			else{
+				start=0;
+				end=long;
+			}
+			ctx.translate((end+start)/2,lastY);
+			update(displayarea.getChr(),start,end);
+		};
+		//右移20
+		var handleScroll9 = function(){
+			if(Math.round(chrLength.get(displayarea.getChr()))<end+Math.round(long/10)){
+				start+=chrLength.get(displayarea.getChr())-end;
+				end=chrLength.get(displayarea.getChr());
+			}
+			else{
+				start=start+Math.round(long/10);
+				end=end+Math.round(long/10);
+			}
+			//if(start<0){start=0}
+			ctx.translate((end+start)/2,lastY);
+            update(displayarea.getChr(),start,end);
+		};
+		var handleScroll10 = function(){
+			if(start-Math.round(long*0.9)>=0){
+				start=start-Math.round(long*0.9);
+				end=end-Math.round(long*0.9);
+				
+			}
+			else{
+				start=0;
+				end=long;
+			}
+			ctx.translate((end+start)/2,lastY);
+			update(displayarea.getChr(),start,end);
+		};
+		var handleScroll11 = function(){
+			if(Math.round(chrLength.get(displayarea.getChr()))<end+Math.round(long*0.9)){
+				start+=chrLength.get(displayarea.getChr())-end;
+				end=chrLength.get(displayarea.getChr());
+			}
+			else{
+				start=start+Math.round(long*0.9);
+				end=end+Math.round(long*0.9);
+			}
+			//if(start<0){start=0}
+			ctx.translate((end+start)/2,lastY);
+            update(displayarea.getChr(),start,end);
+		};
+
 	//添加按钮事件
      move1.addEventListener("click",handleScroll1);//缩小10倍
 	 move2.addEventListener("click",handleScroll2);//缩小5倍
 	 move3.addEventListener("click",handleScroll3);//放大5倍
 	 move4.addEventListener("click",handleScroll4);//放大10倍
-	 left.addEventListener("click",handleScroll6);//左平移20
-	 right.addEventListener("click",handleScroll7);//右平移20
+	 left.addEventListener("click",handleScroll6);
+	 right.addEventListener("click",handleScroll7);
+	 
+	 left1.addEventListener("click",handleScroll8);
+	 right1.addEventListener("click",handleScroll9);
+	 left2.addEventListener("click",handleScroll10);
+	 right2.addEventListener("click",handleScroll11);
 
 	};
 
@@ -134,7 +206,7 @@
 		displayarea.setChr(temp);
 		
 	
-		getSeqData(10000000,displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());	//getSeqData(displayarea.getWidth(),displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());
+		getSeqData(displayarea.getWidth(),displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());		//getSeqData(displayarea.getWidth(),displayarea.getChr(),displayarea.getStart(),displayarea.getEnd());
 		//alert(displayarea.getWidth()+displayarea.getChr()+displayarea.getStart()+'  '+displayarea.getEnd());//temp=XmlNode.getElementsByTagName('E')[0].getElementsByTagName('T')[0].childNodes[0].nodeValue;
 		//alert(temp);
 		//var str=XmlNode.getElementsByTagName('Sequence')[0].childNodes[0].nodeValue;
@@ -144,10 +216,26 @@
 			for(var i in keySet){
 				var temp=XmlNode.getElementById(keySet[i]);
 				displayItems.get(keySet[i]).setXMLnode(temp); 
-				//alert(displayItems.get(keySet[i]).getName());
+				//alert(keySet[i]+displayItems.get(keySet[i]).getXMLnode());
 				//displayitem(a,b,c)
 			} 
 		}
-		tempXML=XmlNode;
+		drawalltrack();	
+		//tempXML=XmlNode;
+		//scorll1的位置控制
+		var scroll1 = document.getElementById("scroll1");
+		var width = scroll1.clientWidth||scroll1.offsetWidth;
+		var bar1 = document.getElementById('bar1');
+		var a=displayarea.getStart()/Math.round(chrLength.get(displayarea.getChr()));
+		
+		bar1.style.left=width*a+'px';
+		
+		var b=(displayarea.getEnd()-displayarea.getStart())/Math.round(chrLength.get(displayarea.getChr()));
+		bar1.style.width=width*b+'px';
+		
+		//var keyset=displayItems.keySet();
+		//if(displayItems.get("HeteV").getXMLnode()!=null)
+			//{alert(displayItems.get(keyset[i]).getXMLnode().getElementsByTagName('V')[0].getElementsByTagName('F')[0].innerHTML);}
+			//.getElementsByTagName('V')[0].id);}
 	}
 }

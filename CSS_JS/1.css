@@ -272,7 +272,7 @@ text-decoration:none;
 
 
 #window{
-	min-height:400px;
+	min-height:500px;
 	width:80%;
 	border:none;
 	margin-left:10%;
@@ -321,9 +321,10 @@ text-decoration:none;
 	cursor: pointer;
 	border:none;
 	
-	background: #333;
+	background:#000;
 	border:1px solid #000;
 	box-sizing: border-box;
+	opacity:0.5;
 }
 .mask1{
 	left: 0;

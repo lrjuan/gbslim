@@ -2,6 +2,7 @@
 var annotations = new HashMap();
 var externals = new HashMap(); 
 var displayItems = new HashMap();
+var chrLength = new HashMap();
 //div ID ='displayItems'+displayItems.keySet()[i];
 var displayarea=new displayArea();
 var predisplay=['OMIM','ensemblGene','knownGene'];
@@ -17,6 +18,10 @@ req.onreadystatechange = Externals_GetReadyStateHandler;
 req.open("GET","servlet/test.do?"+"action=getExternals",false);
 req.send(null);
 
+req.onreadystatechange = Chr_GetReadyStateHandler;
+req.open("GET","servlet/test.do?"+"action=getChromosomes",false);
+req.send(null);
+
 //querry="action=update&width="+displayarea.getWidth()+"&chr=chr22&start="+21000000+"&end="+21500000;
 //querry="action=update&width="+displayarea.getWidth()+"&chr=chr22&start="+displayarea.getStart()+"&end="+displayarea.getEnd();
 //req.onreadystatechange = Update_GetReadyStateHandler;
@@ -27,8 +32,8 @@ req.send(null);
 function displayArea(){
 	var obj = new Object();
   	obj.chr='Chr01';
-  	obj.start=1;
-  	obj.end=500;
+  	obj.start=133000;
+  	obj.end=143000;
 	obj.width=document.body.clientWidth;
 	//查询
  	obj.getChr = function(){
@@ -118,19 +123,31 @@ function Externals_GetReadyStateHandler() {
 function Update_GetReadyStateHandler() {
 	if (req.readyState == 4&&req.status == 200){
 		var XmlNode=req.responseXML;
-		//var temp=XmlNode.getElementsByTagName('Start')[0].childNodes[0].nodeValue;
-		//displayarea.setStart(temp);
-		//temp=XmlNode.getElementsByTagName('End')[0].childNodes[0].nodeValue;
-		//displayarea.setEnd(temp);
-		//temp=XmlNode.getElementsByTagName('Chromosome')[0].childNodes[0].nodeValue;
-		//displayarea.setChr(temp);
-		//alert(displayarea.getChr()+displayarea.getStart()+displayarea.getEnd());
-		//temp=XmlNode.getElementsByID('OMIM')[0].getElementsByTagName('F')[1].childNodes[0].nodeValue;
-		
 		temp=XmlNode.getElementById('OMIM').id;
 		alert(temp);
 		//var str=XmlNode.getElementsByTagName('Sequence')[0].childNodes[0].nodeValue;
 
+	}
+}
+function Chr_GetReadyStateHandler() {
+	if (req.readyState == 4&&req.status == 200){
+		var a=req.responseText;	
+		a=a.replace("<MetaDataExchange>","");
+		a=a.replace("<ChromosomeList>","");
+		a=a.replace("</ChromosomeList>","");
+		a=a.replace("</MetaDataExchange>","");
+		var b=a.split(",");
+		for(var i=0;i<b.length;i++)
+		{
+			var c=b[i].split(":");
+			if(!chrLength.containsKey(c[0]))
+				{
+					chrLength.put(c[0],c[1]); 
+				}
+			else
+				{
+				}
+		}
 	}
 }
 function createTrack(name,mode,type){
@@ -157,7 +174,9 @@ function createTrack(name,mode,type){
   return obj;
 }
 function refresh(){
-	var str='Annotations:\n';
+	alert(displayItems.get('ERR1864411').getXMLnode().getElementsByTagName('ValueList')[0].childNodes[0].nodeValue);
+	//alert(displayItems.get('PtrGene').getDiv());
+	/*var str='Annotations:\n';
     var keySet = annotations.keySet();
     for(var i in keySet){ 
         str+=keySet[i]+":\n";
@@ -180,14 +199,16 @@ function refresh(){
 		}
     }
 	
-	alert(str);
+	alert(str);*/
 }
 
-function displayitem(a,b,c){
+function displayitem(a,b,c,d,e){
    var obj = new Object();
    obj.name =a;
    obj.track_div=b;
    obj.XMLnode=c;
+   obj.mode=d;
+   obj.group=e;
    obj.setName = function (name){
       obj.name=name;
    }
@@ -200,6 +221,15 @@ function displayitem(a,b,c){
    obj.getXMLnode = function(){
       return obj.XMLnode;
    }
+   obj.getMode = function(){
+      return obj.mode;
+   }
+   obj.getGroup = function(){
+      return obj.group;
+   }
+   obj.setMode = function(aaa){
+      obj.mode=aaa;
+   }
    obj.setXMLnode = function(temp){
       obj.XMLnode=temp;
    }
@@ -208,15 +238,21 @@ function displayitem(a,b,c){
 function addTracks(group,track,mode,track_div){
    var request = annotations.get(group).get(track).getRequest();
    querry="action=addTracks&tracks="+track+"&modes="+mode;
-   request.onreadystatechange =function(){getTracks(request,track,track_div);};
+   request.onreadystatechange =function(){getTracks(request,track,track_div,mode,group);};
    request.open("GET","servlet/test.do?"+querry,true);
    request.send(null);
 }
-function getTracks(request,track,track_div){
+function getTracks(request,track,track_div,mode,group){
    if (request.readyState == 4&&request.status == 200) {
       var a = request.responseXML;
-      var ditem = displayitem(track,track_div,a);
+      var ditem = displayitem(track,track_div,a,mode,group);
       displayItems.put(track,ditem);
+	  //alert(group);
+	  
+	  if(group=='Gene'){draweletrack(track,mode,group);}
+	  else if(group=='Variant'){drawvartrack(track,mode,group);}
+	  else if(group=='RNASeq'){drawvaltrack(track,mode,group);}
+	  
    }
 }
 function removeTracks(group,track){
@@ -261,7 +297,7 @@ function add(){
 }
 
 function remove(){
-	if(externals.size()==0){
+	/*if(externals.size()==0){
 		alert('externals为空');
 	}
 	else{
@@ -273,7 +309,7 @@ function remove(){
 		externals.clear();
 		alert('删除成功');
 	}
-	
+	*/
 	
 }
 

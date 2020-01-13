@@ -1,7 +1,6 @@
 /**
  * Created by Administrator on 2019/12/26.
  */
-
 $(function(){
 
     $("#div").click(function(){
@@ -21,7 +20,6 @@ $(function(){
         groups.attr("id",keySet[i]);
 
         $("#choice1").append(groups);
-
 
         var tracks = $('<div></div>');
         tracks.attr("class","option2");
@@ -66,11 +64,19 @@ $(function(){
                 }else{
                     $("#div"+track_id).remove();
                     //在id为window的div中添加一个div
-                    var track_div=$('<div>'+track_id+mode_val+'</div>')
+                    var track_div=$('<div></div>')
                     track_div.attr('id',"div"+track_id);
                     track_div.attr('name',group_id);
 					track_div.attr('class','whxdiv');
-
+					var pic_div=$('<div>'+track_id+'</div>');
+					pic_div.attr('class','pic_div');
+					track_div.append(pic_div);
+                    track_div.hover(function(){
+    						$(this).addClass('pic_hover');
+					},
+					function(){
+    				$(this).removeClass('pic_hover');		
+					});
                     var btn_del = $('<button value="删除">x</button>')
 					btn_del.attr('class','whxdelete')
                     track_div.append(btn_del);
@@ -178,15 +184,23 @@ $(function(){
                     }else{
 						$("#div"+track_id).remove();
                         //在id为window的div中添加一个div
-                        var track_div=$('<div>'+mode_val+'</div>')
+                        var track_div=$('<div></div>')
                         track_div.attr('id',"div"+track_id);
                         track_div.attr('name',"User");
 						track_div.attr('class','whxdiv');
+						var pic_div=$('<div>'+track_id+'</div>');
+						pic_div.attr('class','pic_div');
+						track_div.append(pic_div);
 
                         var btn_del = $('<button value="删除">x</button>')
 					    btn_del.attr('class','whxdelete')
                         track_div.append(btn_del);
-
+						track_div.hover(function(){
+    						$(this).addClass('pic_hover');
+						},
+						function(){
+							$(this).removeClass('pic_hover');
+						});
                         btn_del.bind('click',function(){
                             var track_id=$(this).parent().attr('id').replace("div","")
                             userRemoveTracks(track_id);
@@ -272,15 +286,23 @@ $(function(){
                     }else{
 						$("#div"+track_id).remove();
                         //在id为window的div中添加一个div
-                        var track_div=$('<div>'+mode_val+'</div>')
+                        var track_div=$('<div></div>')
                         track_div.attr('id',"div"+track_id);
                         track_div.attr('name',"User");
 						track_div.attr('class','whxdiv');
+						var pic_div=$('<div>'+track_id+'</div>');
+						pic_div.attr('class','pic_div');
+						track_div.append(pic_div);
 
                         var btn_del = $('<button value="删除">x</button>')
 					    btn_del.attr('class','whxdelete')
                         track_div.append(btn_del);
-
+						track_div.hover(function(){
+    						$(this).addClass('pic_hover');
+						},
+						function(){
+							$(this).removeClass('pic_hover');
+						});
                         btn_del.bind('click',function(){
                             var track_id=$(this).parent().attr('id').replace("div","")
                             userRemoveTracks(track_id);
@@ -310,14 +332,24 @@ $(function(){
         var mode_val=$("#"+trackKeys[j]).parent().children("select").val();
         var group_id = $("#"+trackKeys[j]).parent().parent().attr('id').replace("group","")
         if(mode_val!="hide"){
-            var track_div=$('<div>'+trackKeys[j]+mode_val+'</div>')
+            var track_div=$('<div></div>')
             track_div.attr('id',"div"+trackKeys[j]);
 			track_div.attr('class',"whxdiv");
             track_div.attr('name',group_id);
+			
+			var pic_div=$('<div>'+trackKeys[j]+'</div>');
+			pic_div.attr('class','pic_div');
+			track_div.append(pic_div);
+
             var btn_del = $('<button value="删除">x</button>')
 			btn_del.attr('class','whxdelete')
             track_div.append(btn_del);
-
+			track_div.hover(function(){
+    			$(this).addClass('pic_hover');
+			},
+			function(){
+    			$(this).removeClass('pic_hover');
+			});
             btn_del.bind('click',function(){
                 var group_id=$(this).parent().attr('name');
                 var track_id=$(this).parent().attr('id').replace("div","")
@@ -329,7 +361,7 @@ $(function(){
 
             $("#window").append(track_div);
             //为displayItems加入返回数据，在browser区域加入新track的div，把div对象和addTracks返回的对象存入displayItems
-            addTracks(group_id,trackKeys[j],mode_val,track_div)
+            addTracks(group_id,trackKeys[j],mode_val,track_div);
         }
     }
 }

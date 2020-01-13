@@ -19,7 +19,8 @@
     var mask1 = document.getElementById('mask1');
     //var ptxt = document.getElementsByTagName('p')[0];
     var barleft = 0;
-    bar1.onmousedown = function(event){
+	
+    /*bar1.onmousedown = function(event){
       var event = event || window.event;
       var leftVal = event.clientX - this.offsetLeft;
       var that = this;
@@ -43,7 +44,7 @@
       document.onmousemove = null; //弹起鼠标不做任何操作
     }
  
- 
+ */
   
     var scroll = document.getElementById('scroll');
     var bar = document.getElementById('bar');
