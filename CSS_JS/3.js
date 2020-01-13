@@ -32,8 +32,8 @@ req.send(null);
 function displayArea(){
 	var obj = new Object();
   	obj.chr='Chr01';
-  	obj.start=133000;
-  	obj.end=143000;
+  	obj.start=5000000;
+  	obj.end=15000000;
 	obj.width=document.body.clientWidth;
 	//查询
  	obj.getChr = function(){
@@ -173,34 +173,6 @@ function createTrack(name,mode,type){
   }
   return obj;
 }
-function refresh(){
-	alert(displayItems.get('ERR1864411').getXMLnode().getElementsByTagName('ValueList')[0].childNodes[0].nodeValue);
-	//alert(displayItems.get('PtrGene').getDiv());
-	/*var str='Annotations:\n';
-    var keySet = annotations.keySet();
-    for(var i in keySet){ 
-        str+=keySet[i]+":\n";
-		var temp=annotations.get(keySet[i]); 
-		var	tempkey = temp.keySet();
-		for(var j in tempkey)
-		{
-			str+='    '+temp.get(tempkey[j]).getName()+':'+temp.get(tempkey[j]).getMode()+':'+temp.get(tempkey[j]).getType()+'\n';
-		}
-    }
-	str+='\n\nExternals:\n';
-	var keySet = externals.keySet();
-    for(var i in keySet){ 
-        str+=keySet[i]+":\n";
-		var temp=externals.get(keySet[i]); 
-		var	tempkey = temp.keySet();
-		for(var j in tempkey)
-		{
-			str+='    '+temp.get(tempkey[j]).getName()+':'+temp.get(tempkey[j]).getMode()+':'+temp.get(tempkey[j]).getType()+'\n';
-		}
-    }
-	
-	alert(str);*/
-}
 
 function displayitem(a,b,c,d,e){
    var obj = new Object();
@@ -286,31 +258,6 @@ function userRemoveTracks(track){
 }
 window.onresize = function(){
 	displayarea.setWidth(document.body.clientWidth);
-}
-
-
-
-
-
-function add(){
-	addExternals('BBB','http://localhost:8080/pgbdata/AAAA.hg19.sorted.gdf.gz','VCF');
-}
-
-function remove(){
-	/*if(externals.size()==0){
-		alert('externals为空');
-	}
-	else{
-		var keySet= externals.get("User").keySet(); 
-		for(var i in keySet){
-		//alert(externals.get("User").get(keySet[i]).getName());
-			removeExternals(externals.get('User').get(keySet[i]).getName());
-		}
-		externals.clear();
-		alert('删除成功');
-	}
-	*/
-	
 }
 
 function addExternals(track,links,type) {

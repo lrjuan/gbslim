@@ -37,7 +37,7 @@
 			long=long*10;
 				start = start-temp*4.5;
 				if(start<=0){start=1;}
-				end = start + long;
+				end = start + long-1;
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
 				update(displayarea.getChr(), start, end);
@@ -49,7 +49,7 @@
 	
 				start = start-temp*2;
 				if(start<=0){start=1;}
-				end = start + long;
+				end = start + long-1;
 				//alert(start);
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
@@ -64,7 +64,7 @@
 			}
 			else{
 				start = start+long*2;
-				end = start + long;
+				end = start + long-1;
 				//alert(start);
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
@@ -80,7 +80,7 @@
 			}
 			else{
 				start = start+long*4.5;
-				end = start + long;
+				end = start + long-1;
 				//alert(start);
 				//alert(end);
 				ctx.translate((end + start) / 2, lastY);
