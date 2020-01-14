@@ -59,10 +59,10 @@ $(function(){
 
                 //功能是当模式改成hide时，要把windows中的track删掉
                 if(mode_val=="hide"){
-                    $("#div"+track_id).remove();
+                    $("[id='div"+track_id+"']").remove();
                     removeTracks(group_id,track_id);
                 }else{
-                    $("#div"+track_id).remove();
+                    $("[id='div"+track_id+"']").remove();
                     //在id为window的div中添加一个div
                     var track_div=$('<div></div>')
                     track_div.attr('id',"div"+track_id);
@@ -87,7 +87,7 @@ $(function(){
                         removeTracks(group_id,track_id);
                         $(this).parent().remove();
                         annotations.get(group_id).get(track_id).setMode("hide");
-                        $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                        $("[id='"+track_id+"']").parent().children("select").find("option[value='hide']").prop("selected",true);
                     });
 
                     $("div[id='div"+track_id+"']").text("")
@@ -160,7 +160,7 @@ $(function(){
                     $(this).parent().children("select").remove();
                     $(this).remove();
                     //需要加点东西
-                    $("#div"+trackKeys_user[j]).remove();
+                    $("[id='div"+trackKeys_user[j]+"']").remove();
                     removeExternals($(this).attr("id"));
                 }
             })
@@ -179,10 +179,10 @@ $(function(){
                     var track_id = $(this).parent().children("div").attr("id");
                     externals.get("User").get(track_id).setMode(mode_val);
                     if(mode_val=='hide'){
-                        $("#div"+track_id).remove();
+                        $("[id='div"+track_id+"']").remove();
                         userRemoveTracks(track_id);
                     }else{
-						$("#div"+track_id).remove();
+						$("[id='div"+track_id+"']").remove();
                         //在id为window的div中添加一个div
                         var track_div=$('<div></div>')
                         track_div.attr('id',"div"+track_id);
@@ -206,7 +206,7 @@ $(function(){
                             userRemoveTracks(track_id);
                             $(this).parent().remove();
                             externals.get("User").get(track_id).setMode("hide");
-                            $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                            $("[id='"+track_id+"']").parent().children("select").find("option[value='hide']").prop("selected",true);
                         });
 
                         $("div[id='div"+track_id+"']").text("")
@@ -263,7 +263,8 @@ $(function(){
                 if(mode=='del'){
                     $(this).parent().children("select").remove();
                     $(this).remove();
-                    $("#div"+trackKeys_user[j]).remove();
+					$("[id='div"+trackKeys_user[j]+"']").remove();
+                    //$("#div"+trackKeys_user[j]).remove();
                     removeExternals($(this).attr("id"));
                 }
             })
@@ -281,10 +282,10 @@ $(function(){
                     var track_id = $(this).parent().children("div").attr("id");
                     externals.get("User").get(track_id).setMode(mode_val);
                     if(mode_val=='hide'){
-                        $("#div"+track_id).remove();
+                        $("[id='div"+track_id+"']").remove();
                         userRemoveTracks(track_id);
                     }else{
-						$("#div"+track_id).remove();
+						$("[id='div"+track_id+"']").remove();
                         //在id为window的div中添加一个div
                         var track_div=$('<div></div>')
                         track_div.attr('id',"div"+track_id);
@@ -308,7 +309,7 @@ $(function(){
                             userRemoveTracks(track_id);
                             $(this).parent().remove();
                             externals.get("User").get(track_id).setMode("hide");
-                            $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                            $("[id='"+track_id+"']").parent().children("select").find("option[value='hide']").prop("selected",true);
                         });
 
                         $("div[id='div"+track_id+"']").text("")
@@ -329,8 +330,8 @@ $(function(){
 	for(var i in keySet){
     var trackKeys = annotations.get(keySet[i]).keySet();
     for(var j in trackKeys){
-        var mode_val=$("#"+trackKeys[j]).parent().children("select").val();
-        var group_id = $("#"+trackKeys[j]).parent().parent().attr('id').replace("group","")
+        var mode_val=$("[id='"+trackKeys[j]+"']").parent().children("select").val();
+        var group_id = $("[id='"+trackKeys[j]+"']").parent().parent().attr('id').replace("group","")
         if(mode_val!="hide"){
             var track_div=$('<div></div>')
             track_div.attr('id',"div"+trackKeys[j]);
@@ -356,7 +357,7 @@ $(function(){
                 removeTracks(group_id,track_id);
                 $(this).parent().remove();
                 annotations.get(group_id).get(track_id).setMode("hide");
-                $("#"+track_id).parent().children("select").find("option[value='hide']").prop("selected",true);
+                $("[id='"+track_id+"']").parent().children("select").find("option[value='hide']").prop("selected",true);
             });
 
             $("#window").append(track_div);

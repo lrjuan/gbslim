@@ -32,8 +32,8 @@ req.send(null);
 function displayArea(){
 	var obj = new Object();
   	obj.chr='Chr01';
-  	obj.start=5000000;
-  	obj.end=15000000;
+  	obj.start=10000000;
+  	obj.end=20000000;
 	obj.width=document.body.clientWidth;
 	//查询
  	obj.getChr = function(){
@@ -223,7 +223,8 @@ function getTracks(request,track,track_div,mode,group){
 	  
 	  if(group=='Gene'){draweletrack(track,mode,group);}
 	  else if(group=='Variant'){drawvartrack(track,mode,group);}
-	  else if(group=='RNASeq'){drawvaltrack(track,mode,group);}
+	  else if(group.substring(0,6)=='RNASeq'){drawvaltrack(track,mode,group);}
+	  else if(group=='Regulation'){draweletrack(track,mode,group);}
 	  
    }
 }

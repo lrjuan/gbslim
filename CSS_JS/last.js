@@ -45,15 +45,20 @@ function draweletrack(trackname,mode,group){
 			
 			
 			var tl=a[j].getElementsByTagName('S').length;
-			if(tl==0){
+			if(tl==0&&Math.round(a[j].getElementsByTagName('T')[0].childNodes[0].nodeValue)>displayarea.getStart()){
 				var wid=(canvas.width-150)/(displayarea.getEnd()-displayarea.getStart()+1);
 				var start=Math.round(a[j].getElementsByTagName('F')[0].childNodes[0].nodeValue);
 				var end=Math.round(a[j].getElementsByTagName('T')[0].childNodes[0].nodeValue);
+				if (start<displayarea.getStart()){start=displayarea.getStart()}
 				var w=(end-start+1)*wid;
 				var x=(start-displayarea.getStart())*wid+150;
+				if(w<0.5){w=0.5;}
 				ctx.beginPath;
 				ctx.fillStyle='BLUE';
-				ctx.fillRect(x,level*10,w,8);
+				if(mode=='pack')
+				{ctx.fillRect(x,level*10,w,8);}
+				else if(mode='dense')
+				{ctx.fillRect(x,20,w,10);}
 				ctx.fill();
             	ctx.closePath();
 			}
@@ -166,7 +171,7 @@ function drawvartrack(trackname,mode,group){
 function drawvaltrack(trackname,mode,group){
 		var canvas = document.createElement('canvas');
 		canvas.width=1200;
-		canvas.height=50;
+		canvas.height=60;
 		canvas.style.width="100%";
 		canvas.id='canvas'+trackname;
 		var ctx=canvas.getContext('2d');
@@ -191,6 +196,85 @@ function drawvaltrack(trackname,mode,group){
 
 		document.getElementById('div'+trackname).appendChild(canvas);
 }
+function drawetrack(trackname,mode,group){
+		var canvas = document.createElement('canvas');
+		canvas.width=1200;
+		canvas.height=60;
+		canvas.style.width="100%";
+		canvas.id='canvas'+trackname;
+		var ctx=canvas.getContext('2d');
+		ctx.beginPath();
+		ctx.lineWidth=2;
+   	    ctx.moveTo( 150,0);
+   	    ctx.lineTo( 150,canvas.height);
+   	    ctx.strokeStyle='#669999';
+   	    ctx.stroke();
+   	    ctx.closePath();
+		
+		var a=displayItems.get(trackname).getXMLnode().getElementsByTagName('E');
+		if(a.length>1){
+		var level=0,maxlevel=0;
+		for(var j=1;j<a.length;j++){
+		if(Math.round(a[j].getElementsByTagName('F')[0].childNodes[0].nodeValue)<Math.round(a[j-1].getElementsByTagName('T')[0].childNodes[0].nodeValue)){level++;}
+		else{level=0;}
+		if(maxlevel<level){maxlevel=level;}
+		}
+		if((maxlevel+2)*10>60&&mode=='pack'){
+		canvas.height=(maxlevel+2)*10;
+		var ctx=canvas.getContext('2d');
+		ctx.beginPath();
+		ctx.lineWidth=2;
+   	    ctx.moveTo( 150,0);
+   	    ctx.lineTo( 150,canvas.height);
+   	    ctx.strokeStyle='#669999';
+   	    ctx.stroke();
+   	    ctx.closePath();
+		}}
+		
+	if(a.length>0){
+		var level=0;
+		for(var j=0;j<a.length;j++){
+			if(j>=1){
+				if(Math.round(a[j].getElementsByTagName('F')[0].childNodes[0].nodeValue)<Math.round(a[j-1].getElementsByTagName('T')[0].childNodes[0].nodeValue)){level++;}
+				else{level=0;}
+			}
+			
+			
+			var tl=a[j].getElementsByTagName('S').length;
+			if(tl==0){
+				var wid=(canvas.width-150)/(displayarea.getEnd()-displayarea.getStart()+1);
+				var start=Math.round(a[j].getElementsByTagName('F')[0].childNodes[0].nodeValue);
+				var end=Math.round(a[j].getElementsByTagName('T')[0].childNodes[0].nodeValue);
+				var w=(end-start+1)*wid;
+				var x=(start-displayarea.getStart())*wid+150;
+				ctx.beginPath;
+				ctx.fillStyle='BLUE';
+				ctx.fillRect(x,level*10,w,8);
+				ctx.fill();
+            	ctx.closePath();
+			}
+			else{
+			var b=a[j].getElementsByTagName('S');
+			//var startArr=[];
+			for(var k=0;k<tl;k++) {
+				var type=b[k].getAttribute('Y');
+				var start=b[k].getElementsByTagName('F')[0].childNodes[0].nodeValue;
+				//startArr.push(start);
+				var end=b[k].getElementsByTagName('T')[0].childNodes[0].nodeValue;
+				if(end>displayarea.getStart()){
+					if(start<displayarea.getStart()){
+						start=displayarea.getStart();
+					}
+					if(mode=='dense'){draweledense(ctx,type,start,end,tl,canvas);}
+					else if(mode=='pack'){
+						drawelepack(ctx,type,start,end,canvas,level);
+					}
+				}
+		}}}
+		}
+		document.getElementById('div'+trackname).appendChild(canvas);
+}
+
 //总的绘图	
 function drawalltrack(){
 	var keyset=displayItems.keySet();
@@ -203,7 +287,8 @@ function drawalltrack(){
 		else if(displayItems.get(keyset[i]).getGroup()=='Variant'){ 
 			drawvartrack(keyset[i],displayItems.get(keyset[i]).getMode(),displayItems.get(keyset[i]).getGroup());
 		}
-		else if(displayItems.get(keyset[i]).getGroup()=='RNASeq'){drawvaltrack(keyset[i],displayItems.get(keyset[i]).getMode(),displayItems.get(keyset[i]).getGroup()); }
+		else if(displayItems.get(keyset[i]).getGroup().substring(0,6)=='RNASeq'){drawvaltrack(keyset[i],displayItems.get(keyset[i]).getMode(),displayItems.get(keyset[i]).getGroup()); }
+		else if(displayItems.get(keyset[i]).getGroup()=='Regulation'){draweletrack(keyset[i],displayItems.get(keyset[i]).getMode(),displayItems.get(keyset[i]).getGroup()); }
 	}
 }
 function draweledense(ctx,type,start,end,tl,canvas){
@@ -319,8 +404,8 @@ function drawvarpack(ctx,type,start,end,canvas,level){
 
 function drawvalue(ctx,valueArr,canvas){
 		ctx.beginPath();
-		ctx.moveTo(150,canvas.height);
-		ctx.lineTo(canvas.width,canvas.height);
+		ctx.moveTo(150,canvas.height-5);
+		ctx.lineTo(canvas.width,canvas.height-5);
 		ctx.strokeStyle='rgba(0,0,0,0.5)';
 		ctx.stroke();
 		ctx.closePath();
@@ -341,6 +426,6 @@ function drawvalue(ctx,valueArr,canvas){
 				 var h=(curveH*Arr[i]);
 				 }
 			 ctx.fillStyle='#2D8CF0';
-             ctx.fillRect(x,canvas.height,2,h); 
+             ctx.fillRect(x,canvas.height-6,wid,h); 
              }
 }
