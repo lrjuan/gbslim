@@ -2,34 +2,564 @@
 <root>
 	<Assembly id="Ptrv41">
 		<Anno id="Reference" group="Basic">
-			<Path>C:\workspace\ptrv41\Ptrichocarpa_533_v4.0.fa</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\Ptrichocarpa_533_v4.0.fa</Path>
 			<Default>dense</Default>
 			<Format>REF</Format>
 		</Anno>
 		<Anno id="cytoBand" group="Basic">
-			<Path>C:\workspace\ptrv41\cytoband.Ptrv41.txt</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\cytoband.Ptrv41.txt</Path>
 			<Default>dense</Default>
 			<Format>CYTO</Format>
 		</Anno>
 		<Anno id="SNP" group="Basic">
-			<Path>C:\workspace\ptrv41\aln.sorted_v0.vcf.gz</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\aln.sorted_v0.vcf.gz</Path>
 			<Default>hide</Default>
 			<Format>VCF</Format>
 		</Anno>
 		<Anno id="Genes" group="Basic">
-			<Path>C:\workspace\ptrv41\GENES.Ptrv41.sorted.txt</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\GENES.Ptrv41.sorted.txt</Path>
 			<Default>hide</Default>
 			<Format>PGENES</Format>
 		</Anno>
 		<Anno id="PtrGene" group="Gene">
-			<Path>C:\workspace\ptrv41\Ptrichocarpa_533_v4.1.gene_exons.gff3.sort.bed.gz</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\Ptrichocarpa_533_v4.1.gene_exons.bb</Path>
 			<Default>pack</Default>
+			<Format>BB</Format>
+		</Anno>
+		<Anno id="PtrGene_1" group="Gene">
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\Ptrichocarpa_533_v4.1.gene_exons.gff3.sort.bed.gz</Path>
+			<Default>hide</Default>
 			<Format>BEDGZ</Format>
 		</Anno>
 		<Anno id="HeteV" group="Variant">
-			<Path>C:\workspace\ptrv41\aln.sorted_v0.vcf.gz</Path>
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\aln.sorted_v0.vcf.gz</Path>
 			<Default>pack</Default>
 			<Format>VCF</Format>
+		</Anno>
+		<Anno id="miRNA" group="Regulation">
+			<Path>D:\tomcat9\webapps\gbslim\data\ptrv41\Populus_trichocarpa.miRNA.bed.gz</Path>
+			<Default>dense</Default>
+			<Format>BEDGZ</Format>
+		</Anno>
+		<Anno id="ERR1864411_Ct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864411\ERR1864411.bw</Path>
+			<Default>dense</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864412_Ct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864412\ERR1864412.bw</Path>
+			<Default>dense</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864413_Ct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864413\ERR1864413.bw</Path>
+			<Default>dense</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864414_Ltct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864414\ERR1864414.bw</Path>
+			<Default>dense</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864415_Ltct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864415\ERR1864415.bw</Path>
+			<Default>dense</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864416_Ltct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864416\ERR1864416.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864417_Pd" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864417\ERR1864417.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864418_Pd" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864418\ERR1864418.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864419_Pd" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864419\ERR1864419.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864420_Ltht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864420\ERR1864420.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864421_Ltht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864421\ERR1864421.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864422_Ltht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864422\ERR1864422.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864423_Ltst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864423\ERR1864423.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864424_Ltst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864424\ERR1864424.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864425_Ltst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864425\ERR1864425.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864426_Stct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864426\ERR1864426.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864427_Stct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864427\ERR1864427.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864428_Stct" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864428\ERR1864428.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864429_Std" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864429\ERR1864429.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864431_Std" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864431\ERR1864431.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864432_Stht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864432\ERR1864432.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864433_Stht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864433\ERR1864433.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864434_Stht" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864434\ERR1864434.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864435_Stst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864435\ERR1864435.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864436_Stst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864436\ERR1864436.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864437_Stst" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864437\ERR1864437.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864438_Ct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864438\ERR1864438.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864439_Ct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864439\ERR1864439.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864440_Ct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864440\ERR1864440.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864441_Ltct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864441\ERR1864441.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864442_Ltct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864442\ERR1864442.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864443_Ltct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864443\ERR1864443.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864444_Pd" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864444\ERR1864444.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864445_Pd" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864445\ERR1864445.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864446_Pd" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864446\ERR1864446.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864447_Ltht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864447\ERR1864447.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864448_Ltht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864448\ERR1864448.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864449_Ltht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864449\ERR1864449.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864450_Ltst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864450\ERR1864450.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864451_Ltst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864451\ERR1864451.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864452_Ltst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864452\ERR1864452.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864453_Stct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864453\ERR1864453.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864454_Stct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864454\ERR1864454.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864455_Stct" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864455\ERR1864455.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864456_Std" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864456\ERR1864456.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864457_Std" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864457\ERR1864457.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864458_Std" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864458\ERR1864458.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864459_Stht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864459\ERR1864459.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864460_Stht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864460\ERR1864460.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864461_Stht" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864461\ERR1864461.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864462_Stst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864462\ERR1864462.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864463_Stst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864463\ERR1864463.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864464_Stst" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864464\ERR1864464.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864465_Ct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864465\ERR1864465.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864466_Ct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864466\ERR1864466.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864467_Ct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864467\ERR1864467.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864468_Ltct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864468\ERR1864468.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864469_Ltct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864469\ERR1864469.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864470_Ltct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864470\ERR1864470.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864471_Pd" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864471\ERR1864471.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864472_Pd" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864472\ERR1864472.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864473_Pd" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864473\ERR1864473.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864474_Ltht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864474\ERR1864474.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864475_Ltht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864475\ERR1864475.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864476_Ltht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864476\ERR1864476.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864477_Ltst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864477\ERR1864477.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864478_Ltst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864478\ERR1864478.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864479_Ltst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864479\ERR1864479.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864480_Stct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864480\ERR1864480.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864481_Stct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864481\ERR1864481.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864482_Stct" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864482\ERR1864482.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864483_Std" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864483\ERR1864483.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864484_Std" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864484\ERR1864484.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864485_Std" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864485\ERR1864485.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864486_Stht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864486\ERR1864486.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864487_Stht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864487\ERR1864487.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864488_Stht" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864488\ERR1864488.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864489_Stst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864489\ERR1864489.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864490_Stst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864490\ERR1864490.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="ERR1864491_Stst" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\ERR1864491\ERR1864491.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472991_Rt" group="RNASeq_roottip">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472991\SRR3472991.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472992_Rt" group="RNASeq_roottip">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472992\SRR3472992.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472993_Rt" group="RNASeq_roottip">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472993\SRR3472993.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472994_Rt" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472994\SRR3472994.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472995_Rt" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472995\SRR3472995.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472996_Rt" group="RNASeq_leaf">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472996\SRR3472996.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472997_Rt" group="RNASeq_Phloem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472997\SRR3472997.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472998_Rt" group="RNASeq_Phloem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472998\SRR3472998.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3472999_Rt" group="RNASeq_Phloem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3472999\SRR3472999.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473000_Rt" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473000\SRR3473000.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473001_Rt" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473001\SRR3473001.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473002_Rt" group="RNASeq_root">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473002\SRR3473002.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473003_Rt" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473003\SRR3473003.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473004_Rt" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473004\SRR3473004.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473005_Rt" group="RNASeq_stem">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473005\SRR3473005.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473006_Rt" group="RNASeq_Fibroblast">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473006\SRR3473006.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473007_Rt" group="RNASeq_Fibroblast">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473007\SRR3473007.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473008_Rt" group="RNASeq_Fibroblast">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473008\SRR3473008.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473009_Rt" group="RNASeq_Ductal cells">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473009\SRR3473009.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473010_Rt" group="RNASeq_Ductal cells">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473010\SRR3473010.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473011_Rt" group="RNASeq_Ductal cells">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473011\SRR3473011.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473012_Rt" group="RNASeq_FDR">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473012\SRR3473012.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473013_Rt" group="RNASeq_FDR">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473013\SRR3473013.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
+		</Anno>
+		<Anno id="SRR3473014_Rt" group="RNASeq_FDR">
+			<Path>D:\tomcat9\webapps\gbslim\data\03bamTobw\SRR3473014\SRR3473014.bw</Path>
+			<Default>hide</Default>
+			<Format>BW</Format>
 		</Anno>
 	</Assembly>
 </root>
