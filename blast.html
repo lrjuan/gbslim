@@ -1,0 +1,182 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="CSS_JS/blast.css" /> 
+<title>Blast</title>
+<link rel="icon" type="image/x-icon" href="images/nefu.ico"/>
+</head>
+
+<body>
+<div id='cover'></div>
+   <!-- <div id='cover1'></div>-->
+<div id='uploading'></div>
+<header>
+<div>
+	<a href='https://www.nefu.edu.cn/index.htm' target="_blank">
+	<img src="images/nefulogo.png" alt="">
+	</a>
+	<ul>
+	<li><a href="home.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Home</a></li>
+	<li><a href="browser.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Genome Browser</a></li>
+	<li><a href="blast.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Blast</a></li>
+	<li><a href="downloads.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Downloads</a></li>
+	<li><a href="tutorial.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Tutorial</a></li>
+	</ul>
+</div>
+</header>
+    
+    <div style="border:none;width:850px;">
+        <div id="control" style='background:#FDFFFF;border-top-left-radius:10px;border-top-right-radius:10px; width:900px;height:50px;margin-left:20px;border:1px solid #EBEBEB;'>
+        <input type="button" id='buttonblastn' class='blastselect' value="blastn" style="margin-left:10px;">
+        <input type="button" id='buttonblastp' class='blastselect' value="blastp" style="display:none">
+        <input type="button" id='buttonblastx' class='blastselect' value="blastx" style="display:none">
+        <input type="button" id='buttontblastn' class='blastselect' value="tblastn" style="display:none">
+        <input type="button" id='buttontblastx' class='blastselect' value="tblastx" style="display:none">
+            
+        </div>
+        
+        <!--序列输入-->
+       
+        <div id="seqinput" style="width:900px;height:290px;border:1px solid #EBEBEB;margin-top:10px;margin-left:20px;background:#FDFFFF;">
+            <div style="margin-left:10px;margin-top:5px;font-family:century;font-size:14px;float:left;">Enter accession number(s), gi(s), or FASTA sequence(s) </div>
+            <div style="margin-left:410px;margin-top:5px;font-family:century;font-size:14px;float:left;">Query subrange</div>
+            <div style="position:absolute;font-size:14px;font-family:century;background:none;margin-top:40px;left:750px;height:20px;width:30px;border:none;text-align:right;">From</div>
+            <div style="position:absolute;font-size:14px;font-family:century;background:none;margin-top:100px;left:750px;height:20px;width:30px;border:none;text-align:right;">To</div>
+            <textarea id="seqsearch" autocomplete="off" placeholder="" ></textarea>
+            <input type="text" id="seqsearchfrom" autocomplete="off" placeholder="" >
+            <input type="text" id="seqsearchto" autocomplete="off" placeholder="" >
+            <input type="button" id="seqclear" value="clear" onmouseover="this.style.borderColor='#309F7E';this.style.color='#309F7E'" 
+    onmouseout="this.style.borderColor='';this.style.color=''">
+            
+            <!--<div style="position:absolute;left:30px;margin-top:290px;font-family:century;font-size:14px;">Or, upload file</div>
+            <input type="button" id="btnupload" value="Select file" onmouseover="this.style.borderColor='#309F7E';this.style.color='#309F7E'" 
+    onmouseout="this.style.borderColor='';this.style.color=''">-->
+            <!--<div style="position:absolute;left:30px;margin-top:320px;font-family:century;font-size:14px;">Job Title</div>
+            <input type="text" id="seqsearchto" autocomplete="off" placeholder="" style="position:absolute;left:100px;margin-top:318px;font-family:century;font-size:12px;width:200px;height:20px;">
+            <input id='moreseq' type="radio"style="position:absolute;left:30px;margin-top:360px;font-family:century;font-size:12px;"> 
+            <div style="position:absolute;left:50px;margin-top:360px;font-family:century;font-size:12px;">Align two or more sequences </div>-->
+        </div>
+        
+        
+        <div id="chooseset" style="width:900px;height:100px;border:1px solid #EBEBEB;margin-top:10px;margin-left:20px;background:#FDFFFF;">  
+            <div style="height:120px;width:900px;">
+                <div style="margin-left:5px;margin-top:15px;font-family:century;font-size:14px;float:left;">Database</div>
+                <!--<input id='moreseq' type="radio"style="margin-left:10px;margin-top:9px;font-family:century;float:left;"> 
+                <div style="margin-left:5px;margin-top:7px;font-family:century;font-size:14px;float:left;">Standard databases (nr etc.):</div>
+                <input id='moreseq' type="radio"style="margin-left:10px;margin-top:9px;font-family:century;float:left;"> 
+                <div style="margin-left:5px;margin-top:7px;font-family:century;font-size:14px;float:left;">rRNA/ITS databases</div>
+                <input id='moreseq' type="radio"style="margin-left:10px;margin-top:9px;font-family:century;float:left;"> 
+                <div style="margin-left:5px;margin-top:7px;font-family:century;font-size:14px;float:left;">Genomic + transcript databases</div>-->
+                <select id='databaseselect' style="position:absolute;background:#F4F4F4;left:100px;margin-top:10px;font-family:century;font-size:14px;width:400px;height:30px;border:1px solid #B2B2B2;">
+                    <option value ="Ptrichocarpa_533_v4.0">Ptrichocarpa_533_v4.0</option>
+                    <option value ="Salicaceae">Salicaceae</option>
+                    <option value ="allspecies">The entire species of this system</option>
+                </select>
+                <div id="ProgramSelection" style="position:absolute;left:25px;margin-top:60px;font-family:century;font-size:14px;">Program Selection</div>
+                 <select id='programselect' style="position:absolute;background:#F4F4F4;left:155px;margin-top:55px;font-family:century;font-size:14px;width:345px;height:30px;border:1px solid #B2B2B2;">
+                 	<option value ="megablast">megablast</option>
+                    <option value ="blastn">blastn</option>
+                    <option value ="blastn-short">blastn-short</option>
+                    <option value ="dc-megablast">dc-megablast</option>
+                    <option value ="rmablast">rmablast</option>
+                </select>
+            </div>
+            
+            <!--<div style="position:absolute;margin-left:5px;margin-top:10px;font-family:century;font-size:14px;">Organism</div>
+            <input type="text" id="seqsearchto" autocomplete="off" placeholder="" style="position:absolute;left:100px;margin-top:10px;font-family:century;font-size:12px;width:200px;height:20px;">
+        
+            
+    		<input type="button" id="algorithmparameters" style="width:200px;height:25px;border:1px solid #EBEBEB;background:#FFF;margin-top:10px;margin-left:5px;" value="Algorithm parameters" onmouseover="this.style.borderColor='#309F7E';this.style.color='#309F7E'" 
+    onmouseout="this.style.borderColor='';this.style.color=''">-->
+        </div>
+        
+    </div>
+    <div id="result">
+    	<div style="width:100%;height:30px;left:100px;top:3px;border-bottom:1px solid #EBEBEB;">
+        	<div style="font-size:20px;font-family:century;margin-left:10px;margin-top:5px;">Result</div>
+        </div>
+    	<!--<input id="resultdelete" type="button">-->
+        <div id="resulttext"></div>
+    </div>
+    
+    <div id="parameters" style="width:900px;height:280px;margin-top:2px;margin-left:20px;border:1px solid #EBEBEB;background:#FFF;">
+    	<div style="font-size:14px;font-family:century;margin-left:5px;">General Parameters</div>
+        <div style="margin-top:10px;height:40px;">
+        	 <div style="font-size:14px;font-family:century;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;">Max target sequences</div>
+             <div style="float:left;margin-left:20px;">
+                 <select id='maxtarget' style="border:1px solid #B2B2B2;width:170px;height:20px;font-family:century;">
+                    <option value ="default">default</option>
+                    <option value ="10">10</option>
+                    <option value ="50">50</option> 
+                    <option value ="100">100</option> 
+                    <option value ="500">500</option>         	
+                    <option value ="1000">1000</option>
+                    <option value ="5000">5000</option>
+                 </select>
+                 <div style="font-size:12px;margin-top:2px;">Select the maximum number of aligned sequences to display</div>
+			</div>
+        </div>
+        
+		<div style="margin-top:10px;height:40px;">
+        	<div style="font-size:14px;font-family:century;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;">Expect threshold</div>
+            <input type="text" id="evalue" style="font-family:century;margin-left:20px;background:#FFF;border:1px solid #C0C0C0;width:170px;height:20px;" value='10';>
+		</div>
+		<div style="margin-top:10px;height:40px;">
+        	<div style="font-size:14px;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;font-family:century;">Word size</div>
+            <select id='wordsize' style="margin-left:20px;border:1px solid #B2B2B2;width:170px;height:20px;font-family:century;">
+                    <option value ="default">default</option>
+                    <option value ="16">16</option>
+                    <option value ="20">20</option>           	
+                    <option value ="24">24</option>
+                    <option value ="28">28</option>
+                    <option value ="32">32</option>
+                    <option value ="48">48</option>
+                    <option value ="64">64</option>
+                    <option value ="128">128</option>
+                    <option value ="256">256</option>
+             </select>
+		</div>
+      <!--  <div style="margin-top:10px;border:1px solid #000;height:40px;">
+        	<div style="font-size:14px;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;">Max matches in a query range
+</div>
+            <input type="text" id="maxmatch" style="margin-left:20px;background:#FFF;border:1px solid #000;width:100px;height:20px;" value='0';>
+		</div>-->
+        
+        <div style="margin-top:10px;height:40px;">
+        	<div style="font-size:14px;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;font-family:century;">Match/Mismatch Scores</div>
+            <select id='matchscores' style="margin-left:20px;border:1px solid #B2B2B2;width:170px;height:20px;font-family:century;">
+            		<option value ="default">default</option>
+                    <option value ="1,-2">1,-2</option>
+                    <option value ="1,-3">1,-3</option>
+                    <option value ="1,-4">1,-4</option>           	
+                    <option value ="2,-3">2,-3</option>
+                    <option value ="4,-5">4,-5</option>
+                    <option value ="1,-1">1,-1</option>
+             </select>
+		</div>
+        <div style="margin-top:10px;height:40px;">
+        	<div style="font-size:14px;margin-left:5px;width:120px;height:40px;float:left;border-right:1px solid #000;font-family:century;">Gapcost</div>
+            <select id='gapcost' style="margin-left:20px;border:1px solid #B2B2B2;width:170px;height:20px;font-family:century;">
+                    <option value ="linear">linear</option>
+                    <option value ="5,2">Existence:5,Extension:2</option>
+                    <option value ="2,2">Existence:2,Extension:2</option>           	
+                    <option value ="1,2">Existence:1,Extension:2</option>
+                    <option value ="0,2">Existence:0,Extension:2</option>
+                    <option value ="3,1">Existence:3,Extension:1</option>
+                    <option value ="2,1">Existence:2,Extension:1</option>
+                    <option value ="1,1">Existence:1,Extension:1</option>
+             </select>
+		</div>
+    </div>
+    <div  style="width:900px;height:47px;border:1px solid #EBEBEB;margin-top:5px;margin-left:20px;background:#FDFFFF;">  
+        	<input type="button" id="btnblast"  value="Blast" onmouseover="this.style.borderColor='#309F7E';this.style.color='#309F7E'" 
+    onmouseout="this.style.borderColor='';this.style.color=''">
+        </div>
+ <footer>
+	  <p><a href="home.html">Home</a> |  <a href="browser.html" target="_blank">Genome Browser</a> | <a href="blast.html" target="_blank">Blast</a> | <a href="downloads.html">Downloads</a> | <a href="tutorial.html">Tutorial</a> | <a href="mailto:PopulusGenomeBrowser@gmail.com">Contact</a></p>
+	  <p><a>Copyright©NEFU</a></p>
+</footer>  
+<script type="text/javascript" src="CSS_JS/blast.js"></script>
+</body>
+</html>

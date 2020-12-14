@@ -1,0 +1,676 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" >
+		<title>Tutorial</title>
+		<link rel="icon" type="image/x-icon" href="images/nefu.ico"/>
+		<style type="text/css">
+		    
+			header{
+			    height:60px;
+				background:#00785a;
+				position:relative;
+				z-index:10;
+				top:0;
+			}
+			header img{
+			    width:200px;
+				height:60px;
+			}
+			header ul{
+				min-width:650px;
+				float:right;
+			}
+			header ul li{
+				float:left;
+				min-width:100px;
+				list-style:none;
+				text-align:center;
+			}
+			header ul li a{
+			    color:#fff;
+				text-decoration:none;
+				font-size:18px;
+			}
+			#wrap a:link {
+				text-decoration: none;
+			}
+			#wrap a:visited {
+				text-decoration: none;
+			}
+			#wrap a:hover {
+				text-decoration: underline;
+			}
+			body, td, th {
+				font: 14px Century;
+			}
+			body {
+			    min-width:1200px;
+				background: none repeat scroll 0 0 #FFFFFF;
+				color: #000000;
+				margin: 0;
+				padding: 0;
+			}
+			table {
+				border: 0 solid #CCCCCC;
+			}
+			td {
+				padding: 0.2em;
+				vertical-align: top;
+			}
+			th {
+				font-weight: bold;
+				padding: 0.2em;
+				text-align: left;
+			}
+			#tbl table {
+				border: 1px solid #CCCCCC;
+			}
+			#tbl td {
+				border: 1px solid #CCCCCC;
+				padding: 0.3em;
+			}
+			#wrap {
+				margin: 0 auto;
+				text-align: left;
+				width:90%;
+			}
+			#wrap a{
+			    color:green;
+				text-decoration: none;
+			}
+			#wrap blockquote a{
+			    color:green;
+				text-decoration: none;
+			}
+			hr {
+				background: none repeat scroll 0 0 #C7C7C7;
+				border-color: #C7C7C7;
+				border-style: none;
+				color: #C7C7C7;
+				height: 1px;
+				margin: 1em 0;
+			}
+			h1, h2, h3, h4, h5, h6 {
+				font-family: Century;
+				font-weight: bold;
+			}
+			p{
+				text-align: justify;
+			}
+			.block{
+				padding:3px;
+				text-align: justify;
+				width:450px;
+			}
+			i{
+			    font-style: normal;
+			}
+			footer{
+				 height:100px;
+				 background:#00785a;
+				 padding:10px;
+			}
+			footer p{
+				text-align:center;
+				color:#fff;
+			}
+			footer a{
+				color:#fff;
+				text-decoration:none;
+	            font-family:century;
+				font-size:16px;
+			}
+		</style>
+	</head>
+	<header>
+	<div>
+		<a href='https://www.nefu.edu.cn/index.htm' target="_blank">
+		<img src="images/nefulogo.png" alt="">
+		</a>
+		<ul>
+		<li><a href="home.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Home</a></li>
+		<li><a href="browser.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Genome Browser</a></li>
+		<li><a href="blast.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Blast</a></li>
+		<li><a href="downloads.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Downloads</a></li>
+		<li><a href="tutorial.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Tutorial</a></li>
+		</ul>
+	</div>
+	</header>
+	<body>
+		<div id="wrap">
+			<a name="top"></a>
+			<center>
+				<h1>
+					<hr>
+					<i>Tutorial - </i>
+					<nobr>Populus Genome Browser</nobr>
+					<hr>
+				</h1>
+			</center>
+			<a name="0">
+				<h3>DESCRIPTION</h3>
+			</a>
+			<blockquote>
+				<p>
+				The <a href="browser.html" target="_blank"><b>Populus Genome Browser</b></a> is developed to provide comprehensive functional annotation and visualization for individual genomes. The Populus Genome Browser leverages the <i>genetic-molecular-phenotypic</i> framework. It allows investigators to easily view individual genetic variants, as well as diverse genomic features and phenotypes associated to the individual genetic variants. The Populus Genome Browser can especially highlight individual genetic variants that have potential functional implications, and report the potential functional variants distribution of the input personal genome based on Populus Genome Browser. 
+				</p>
+				<p>
+				The Populus Genome Browser is best accessed using Google Chrome, and works smoothly as well with other web-browsers, including Mozilla Firefox, Safari, Microsoft Internet Explorer (Version 10 or later), Opera, etc. HTML5 Canvas is used as the graphic engine to plot the visual elements, thus some earlier versions of web-browsers that do not support HTML5, such as IE6-9, are not compatible with the Populus Genome Browser.
+				</p>
+				<p>
+				The Populus Genome Browser can also be easily deployed on a user's server. A few basic supporting data/tool is required for the Populus Genome Browser local installation, such as reference sequence, cytoBand, SNP database, HGNC Genes, refSeq genes annotation, and Annovar program with SIFT and PolyPhen2 score databases. <b>Tomcat6+</b> and <b>JAVA</b> is also needed for Populus Genome Browser running. Detailed instructions can be found in the package.
+				</p>
+			</blockquote>
+			<a name="contents"></a>
+			<h3>CONTENTS</h3>
+			<blockquote>
+				<a href="#1">Basic operations</a>
+				<br>
+				<a href="#2">Visualization System</a>
+				<br>
+				<a href="#3">Visualization Elements Of The Four Types Of Tracks</a>
+				<br>
+				<a href="#4">Track Management</a>
+				<br>
+				<a href="#5">Plant Genomes</a>
+				<br>
+				<a href="#6">Blast Sequence Search Engine</a>
+				<br>
+				<a href="#7">Authors</a>
+				<br>
+				<a href="#8">References</a>
+				<br>
+			</blockquote>
+			<a name="1">
+				<h3>BASIC OPERATIONS</h3>
+			</a>
+			<blockquote>
+				<img src="images/tutorial1.png" width="700px"/>
+				<p>
+				<table cellpadding="3">
+					<tbody>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>1.</b>
+							</td>
+							<td valign="bottom" colspan="3">
+								Navigation
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px">
+								&bull;
+							</td>
+							<td valign="bottom" colspan="2">
+								Navigation by chromosome coordinates
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px"/>
+							<td valign="bottom">
+								chr01:1-10000&nbsp;&nbsp;&nbsp;&nbsp;<font color="4daf4a">&radic;</font>
+								<br>
+								Chr01:1-2345678&nbsp;&nbsp;&nbsp;&nbsp;<font color="e41a1c">x</font>
+								<br>
+								chr01&nbsp;1&nbsp;2345678&nbsp;&nbsp;&nbsp;&nbsp;<font color="e41a1c">x</font>
+								<br>
+								&nbsp;&nbsp;&nbsp;1:1-2345678&nbsp;&nbsp;&nbsp;&nbsp;<font color="e41a1c">x</font>
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px">
+								&bull;
+							</td>
+							<td valign="bottom" colspan="2">
+								Navigation by gene symbol
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px"/>
+							<td valign="bottom">
+								Auto-complete&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="4daf4a">&radic;</font>
+								<br>
+								Case-insensitive&nbsp;&nbsp;<font color="4daf4a">&radic;</font>
+							</td>
+						</tr>
+						<tr valign="top">
+						<td></td>
+						<td>&bull;</td>
+						<td>
+						<img src="images/tutorial11.png" width="400px"/>
+						</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>2.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+								Zooming
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px">
+								&bull;
+							</td>
+							<td valign="bottom">
+								按“ -10”、“-3”、“+3”、“+10”按钮缩放,缩小放大当前可视化区域10倍，三倍。
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap=""/>
+							<td valign="bottom" width="15px"/>
+							<td valign="bottom">
+								<b>'+'</b>: Zoom in; <b>'-'</b>: Zoom out
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>3.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+								点击左右箭头控制显示区域左右移动。
+								<br>
+								移动有三个不同的速率，分别控制移动当前显示区域的90%，50%，10%。
+							</td>
+			
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>4.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+							Holding the <b>'shift'</b> and using cursor to select a region to zoom in<sup>*</sup>
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>5.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+							Holding the <b>'z'</b> key and scrolling the mouse wheel to zoom out/in<sup>*</sup>
+							</td>
+						</tr>
+						<tr valign="top">
+							<td colspan="3">
+								<sup>*</sup><i>These operations may be invalid if the hotkey is occupied by browser plugins or other programs.</i>
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>6.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+							Dragging the visualization area in either direction to move left or right within the current zoom level
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>7.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+							Clicking <b>'x'</b> button to hide a track.
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="20px" nowrap="">
+								<b>8.</b>
+							</td>
+							<td valign="bottom" colspan="2">
+							Clicking<b>'Plant Genomes'</b>查看杨树与多个物种的relation tree。
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				</p>
+			</blockquote>
+			<a name="2">
+				<h3>Visualization System</h3>
+		    </a>
+			<blockquote>
+				<img src="images/tutorial6.png" width="600px" />
+				<p>
+				Populus Genome Browser display module mainly includes Reference genome, Gene Annotation, GC Percent, Heterozygous loci, miRNA loci and Different tissue gene 
+expression levels...The user can control the visualization system with the help of <a href='#1'>BASIC OPERATIONS</a>.
+				</p>
+				<table cellpadding="3">
+				<tbody>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>1.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Reference genome
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap=""/>
+						<td valign="bottom" width="15px">
+							&bull;
+						</td>
+						<td valign="bottom" colspan="2">
+							The sequence is not displayed when the browsing area is large.
+
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>2.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Gene Annotation
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>3.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							GC Percent
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>4.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Heterozygous loci
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap=""/>
+						<td valign="bottom" width="15px">
+							&bull;
+						</td>
+						<td valign="bottom" colspan="2">
+							Click on genomic elements to view detailed information.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>5.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							miRNA loci
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>6.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Different tissue gene expression levels
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>7.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Values Track have two display modes of heat map and curve.
+						</td>
+					</tr>
+				</tbody>
+				</table>
+			</blockquote>
+			<a name="3">
+				<h3>VISUALIZATION ELEMENTS OF THE FOUR TYPES OF TRACKS</h3>
+			</a>
+			<blockquote>
+				<img src="images/tutorial2.png" width="600px" />
+				<p>
+				Populus Genome Browser中的四种track类型显示了不同格式的基因组数据，包括序列（sequence），变异（variants），元素（elements），值（values）。序列类型只有一种显示模式，其他三种数据类型有两种显示模式：dense和pack。
+				</p>
+				<p>
+				1.Sequence
+				<br>
+				&nbsp;&nbsp;在序列Sequenc Track中，参考基因组是碱基序列，由不同的颜色可视化A、C、G、T（red/yellow/blue/green）。
+				</p>
+				<p>
+				2.Variants
+				<br>
+				&nbsp;&nbsp;在变异体Variants中，基因组位置和等位基因是有关遗传变异体的基本信息。在基因组面板中，带有标签的不同颜色的符号用于指示变体的位置和等位基因。与UCSC基因组浏览器类似，当浏览区域中存在大量变体时，符号会被短的垂直线（或变体覆盖较大区域的区域）替换。不同类型的变体用不同的颜色表示(SNV(blue),DEL(red),INS(blcak))。不同显示模式（dense/pcak）下，变异区域显示高度也不同。用户可以观察浏览区域的整体视图，获得变异track的可视化信息。
+				</p>
+				<p>
+				3.Elements
+				<br>
+				&nbsp;&nbsp;Elements track描述了离散区域中的基因组特征。特征的属性，主要包括外显子，内含子，编码区，方向等，可视化界面使用了不同的形状来表示显示模式的差异。pack显示模式下，元素X,L,D颜色相同为blue，高度为降序排列来区分。
+				</p>
+				<p>
+				4.Values
+				<br>
+				&nbsp;&nbsp;Values track描述了基因组位置/区域的特征，包括保守性，基因表达水平，DNA甲基化，组蛋白修饰和GC含量（including conservation, gene expression level, reads enrichment, DNA methylation, Histone modification, and GC content.）。Values track当前使用了波形图与热图（Waveform and Heat map）的形式可视化这些基因组数据的不同显示模式（dense/pack）。热图显示模式下正值为red，负值为blue。颜色从深到浅的程度代表了值的大小区别。
+				</p>
+			</blockquote>
+			<a name="4">
+				<h3>Track Management</h3>
+			</a>
+			<blockquote>
+				<img src="images/tutorial3.png" width="600px" />
+				<table cellpadding="3">
+				<tbody>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>1.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Track Management
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap=""/>
+						<td valign="bottom" width="15px">
+							&bull;
+						</td>
+						<td valign="bottom" colspan="2">
+							Clicking<b> 'Track Management'</b> to view the Track Management interface.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>2.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Submits data
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap=""/>
+						<td valign="bottom" width="15px">
+							&bull;
+						</td>
+						<td valign="bottom" colspan="2">
+							Users can submit genome annotation data in a variety of mainstream formats and browse custom tracks.
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>3.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+						 Existing data
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap=""/>
+						<td valign="bottom" width="15px">
+							&bull;
+						</td>
+						<td valign="bottom" colspan="2">
+							Built-in gene annotation, transcription regulation, sequence features, heterozygous sites, and gene expression levels in different tissues such as roots, stems, leaves, etc., a total of 12 types and more than 100 kinds of data.
+						</td>
+					</tr>
+				</tbody>
+				</table>
+				<p>
+				点击<b>Track Management</b>按钮，打开Track Management界面。可以管理Populus Genome Browser的可视化界面，控制已添加track的可视化以及显示模式（dense/pack）。
+				</p>
+				<p>
+				点击选择不同类型中的基因组数据，并选择显示模式(dense/pack)，添加<b>Track</b>到可视化区域。
+				</p>
+			</blockquote>
+			<a name="5">
+				<h3>Plant Genomes</h3>
+			</a>
+			<blockquote>
+				<img src="images/tutorial4.png" width="600px" />
+				<p>
+				&bull;&nbsp;点击<b>Plant Genomes</b>按钮，打开物种关系树界面，可以看到以关系树形式展示的包括杨树在内的多种植物物种。
+				</p>
+				<p>
+				&bull;&nbsp;在当前关系树中有二十多个物种，我们已经对已有的物种基因组数据与杨树基因组数据进行了比对。处理过的数据添加到了Populus Genome Browser数据库中。
+				</p>
+				<p>
+				&bull;&nbsp;用户可以在关系树中点击选择关系树中已有物种的基因组数据，添加到Track界面实现可视化，观察物种与杨树基因组数据的比较结果。
+				</p>
+				<img src="images/tutorial5.png" width="600px"/>
+				<p>
+				上图是用户可以在可视化界面观察不同物种基因组数据与杨树基因组数据比较的样例，当放大到一定程度，可以观察到碱基的差异，碱基的显示方法与Sequence类似。
+				</p>
+				<img src="images/tutorial8.png" width="600px"/>
+				<p>
+				Large scale：Multi-species homology region location
+				</p>
+				</p>
+				<img src="images/tutorial9.png" width="600px"/>
+				<p>
+				Small scale：Multi-species homologous sequence visualization
+				</p>
+			</blockquote>
+			<a name="6">
+				<h3>BLAST Sequence Search Engine</h3>
+			</a>
+			<blockquote>
+			<img src="images/tutorial10.png" width="600px"/>
+			<p><b>Main function introduction</b></p>
+			<table cellpadding="3">
+				<tbody>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>1.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							BLAST Search Mode
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>2.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Input Sequence
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>3.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Search sequence subregion
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>4.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Select Sequence Database
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>5.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							BLAST Parameter Settings
+						</td>
+					</tr>
+					<tr valign="top">
+						<td width="20px" nowrap="">
+							<b>6.</b>
+						</td>
+						<td valign="bottom" colspan="3">
+							Output result
+						</td>
+					</tr>
+				</tbody>
+			</table>
+				<p><strong>Basic Local Alignment Search Tool (BLAST)</strong></p>
+				<p>
+				<strong>BLAST</strong> finds regions of similarity between biological sequences. The program compares nucleotide or protein sequences to sequence databases and calculates the statistical significance of matches. BLAST can be used to infer functional and evolutionary relationships between sequences as well as help identify members of gene families.
+				</p>
+				<p>
+				A sequence similarity search often provides the first information about a new DNA or protein sequence. A search allows scientists to infer the function of a sequence from similar sequences. There are many ways of performing a sequence similarity search, but probably the most popular method is the “Basic Local Alignment Search Tool” <strong>(BLAST)</strong>. BLAST uses heuristics to produce results quickly. It also calculates an “expect value” that estimates how many matches would have occurred at a given score by chance, which can aid a user in judging how much confidence to have in an alignment.
+				<br>
+				As the name implies, BLAST performs “local” alignments. Most proteins are modular in nature, with one or more functional domains occurring within a protein. The same domains may also occur in proteins from different species. The BLAST algorithm is tuned to find these domains or shorter stretches of sequence similarity. The local alignment approach also means that an mRNA can be aligned with a piece of genomic DNA, as is frequently required in genome assembly and analysis. If instead BLAST started out by attempting to align two sequences over their entire lengths (known as a global alignment), fewer similarities would be detected, especially with respect to domains and motifs.
+				</p>
+			</blockquote>
+			<a name="7">
+				<h3>AUTHORS</h3>
+			</a>
+			<blockquote>
+				<p>
+				Liran Juan, Zixiao Zhang, Yue Gong and Guohua Wang<sup>*</sup>
+				</p>
+				<p>
+				Bioinformatics Laboratory, Northeast Forestry University, Harbin, Heilongjiang 150001, China.
+				</p>
+				<p>
+				Please do not hesitate to address comments/questions/suggestions regarding this webpage to: <a href="mailto:PopulusGenomeBrowser@gmail.com">PopulusGenomeBrowser@gmail.com</a>.
+				</p>
+			</blockquote>
+			<a name="8">
+				<h3>REFERECES</h3>
+			</a>
+			<blockquote>
+				<table cellpadding="3">
+					<tbody>
+						<tr valign="top">
+							<td width="30px" nowrap="">
+								<b>1.</b>
+							</td>
+							<td valign="bottom">
+								Ashley, E.A., Butte, A.J., Wheeler, M.T., Chen, R., Klein, T.E., Dewey, F.E., Dudley, J.T., Ormond, K.E., Pavlovic, A. and Morgan, A.A. (2010) Clinical assessment incorporating a personal genome. <i>The Lancet</i>, <b>375</b>, 1525-1535.
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="30px" nowrap="">
+								<b>2.</b>
+							</td>
+							<td valign="bottom">
+								Wang, K., Li, M. and Hakonarson, H. (2010) ANNOVAR: functional annotation of genetic variants from high-throughput sequencing data. <i>Nucleic Acids Res</i>, <b>38</b>, e164.
+							</td>
+						</tr>
+						<tr valign="top">
+							<td width="30px" nowrap="">
+								<b>3.</b>
+							</td>
+							<td valign="bottom">
+								Li, H. (2011) Tabix: fast retrieval of sequence features from generic TAB-delimited files. <i>Bioinformatics</i>, <b>27</b>, 718-719.
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</blockquote>
+			<hr>
+			<table width="100%">
+				<tbody>
+					<tr>
+						<td width="33%"><i>Populus GenomeBrowser-1.0</i></td>
+						<td width="33%" align="center">Populus Genome Browser</td>
+						<td width="33%" align="right"><i>10 October 2020</i></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	<footer>
+	  <p><a href="home.html">Home</a> |  <a href="browser.html" target="_blank">Genome Browser</a> | <a href="blast.html" target="_blank">Blast</a> | <a href="downloads.html">Downloads</a> | <a href="tutorial.html">Tutorial</a> | <a href="mailto:PopulusGenomeBrowser@gmail.com">Contact</a></p>
+	  <p><a>Copyright©NEFU</a></p>
+    </footer>	
+	</body>
+</html>

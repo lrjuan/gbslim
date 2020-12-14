@@ -1,0 +1,506 @@
+<!doctype html>
+<html>
+	<head>
+	    <meta charset="utf-8" >
+		<title>Downloads</title>
+		<link rel="icon" type="image/x-icon" href="images/nefu.ico"/>
+		<style type="text/css">
+		    body{
+			    min-width:1200px;
+			}
+			header{
+			    height:60px;
+				background:#00785a;
+				position:relative;
+				z-index:10;
+				top:0;
+			}
+			header img{
+			    width:200px;
+				height:60px;
+			}
+			header ul{
+				min-width:650px;
+				float:right;
+			}
+			header ul li{
+				float:left;
+				min-width:100px;
+				list-style:none;
+				text-align:center;
+			}
+			header ul li a{
+			    color:#fff;
+				text-decoration:none;
+				font-size:18px;
+				font-family:Century;
+			}
+			table {
+				border-top: 1px solid #999;
+				border-left: 1px solid #999;
+				border-spacing: 0;
+				font-family:Century;
+				margin-left:40px;
+			}
+			table tr td{
+				padding:10px 10px;
+				border-bottom: 1px solid #999;
+				border-right: 1px solid #999;
+			    min-width:30px;
+				border-color:"#00785a";
+			}
+			table a{
+			    text-decoration:none;
+				color:black;
+			}
+			h1{
+				background:#00785a;
+				color:#fff;
+				font-size:25px;
+				padding:10px;
+				font-family:Century;
+			}
+			h2{
+			    background:#00785a;
+				color:#fff;
+				font-size:20px;
+				padding:10px;
+				font-family:Century;
+			}
+			h3{
+			    background:#00785a;
+				font-size:20px;
+				padding:10px;
+				font-family:Century;
+				color:#fff;
+			}
+			h4{
+			    display:table;
+				color:#4B0082;
+				font-size:18px;
+				font-family:Century;
+				margin-left:30px;
+			}
+			#div1{
+			    margin-left:20px;
+			}
+			p{
+				width:95%;
+				font-family:Century;
+			}
+			#downloaddisplay a{
+				display:table;
+			}
+			footer{
+				 height:100px;
+				 background:#00785a;
+				 padding:10px;
+			}
+			footer p{
+				text-align:center;
+				color:#fff;
+			}
+			footer a{
+				color:#fff;
+				text-decoration:none;
+			}
+		</style>
+	</head>
+<body>
+<header>
+<div>
+	<a href='https://www.nefu.edu.cn/index.htm' target="_blank">
+	<img src="images/nefulogo.png" alt="">
+	</a>
+	<ul>
+	<li><a href="home.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Home</a></li>
+	<li><a href="browser.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Genome Browser</a></li>
+	<li><a href="blast.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Blast</a></li>
+	<li><a href="downloads.html" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Downloads</a></li>
+	<li><a href="tutorial.html" target="_blank" onmouseover="this.style.color='#003973';" onmouseout="this.style.color='#fff';">Tutorial</a></li>
+	</ul>
+</div>
+</header>
+<div id="downloaddisplay">
+<h1>Sequence and Annotation Downloads</h1>
+<div id="div1">
+<p>This page contains links to sequence and annotation data downloads for the genome assemblies featured in the Populus Genome Browser. Table downloads are also available via the Genome Browser. For quick access to the most recent assembly of each genome, see the current genomes directory. This directory may be useful to individuals with automated scripts that must always reference the most recent assembly. </p>
+<p>To view the current descriptions and formats of the tables in the annotation database.</p>
+<h2>Populus Genome Browser Data</h2>
+<p><strong>Populus Genome Browser</strong>中的数据主要包括参考基因组、GC含量、重复序列、RefSeq基因、miRNA位点、杂合子位点、根组织基因表达水平、茎组织基因表达水平、叶组织基因表达水平、韧皮部组织基因表达水平、导管细胞基因表达水平、成纤维细胞基因表达水平、FDR基因表达水平、根尖组织基因表达水平...我们提供了这些数据的下载功能。可以在下方点击相应的链接下载得到数据。</p>
+<p>Below is two table that summarizes the data of multiple species already in the <strong>Populus Genome Browser</strong>, with some detail description introduction. </p>
+<table>
+<tr>
+<td>Track Name</td>
+<td>Track分组（Track Group）</td>
+<td>Track数量（Track Number）</td>
+</tr>
+<tr>
+<td>Reference genome</td>
+<td>genome sequence</td>
+<td>1</td>
+</tr>
+<tr>
+<td><a href="#6">GC Percent</a></td>
+<td>Sequence Characterization</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Repeated Sequence</td>
+<td>Sequence Characterization</td>
+<td>1</td>
+</tr>
+<tr>
+<td>RefSeq gene</td>
+<td>Gene Annotation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>MiRNA loci</td>
+<td>Transcription Regulation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Heterozygote loci</td>
+<td>Variant Annotation</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Root tissue gene expression level</td>
+<td>Gene Expression</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Stem tissue gene expression level</td>
+<td>Gene Expression</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Leaf tissue gene expression level</td>
+<td>Gene Expression</td>
+<td>29</td>
+</tr>
+<tr>
+<td>Phloem tissue gene expression level</td>
+<td>Gene Expression</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Duct cell gene expression level</td>
+<td>Gene Expression</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Fibroblast gene expression level</td>
+<td>Gene Expression</td>
+<td>3</td>
+</tr>
+<tr>
+<td>FDR gene expression level</td>
+<td>Gene Expression</td>
+<td>3</td>
+</tr><tr>
+<td>Root tip tissue gene expression level</td>
+<td>Gene Expression</td>
+<td>3</td>
+</tr>
+</table>
+<p>Plant Genomes 中已有物种数据介绍</p>
+<table>
+<tr>
+<td>物种名(Species Name)</td>
+<td>科(Family)</td>
+<td>目(Order)</td>
+</tr>
+<tr>
+<td>Salix viminalis</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Salix brachista</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Populus alba</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr><tr>
+<td>Populus euphratica</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr><tr>
+<td>Populus trichocarpa</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Populus tremula</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Populus tremuloides</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Populus pruinosa</td>
+<td>Salicaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Hevea brasiliensis</td>
+<td>Euphorbiaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Jatropha curcas</td>
+<td>Euphorbiaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Mercurialis annua</td>
+<td>Euphorbiaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Manihot esculenta</td>
+<td>Euphorbiaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Ricinus communis</td>
+<td>Euphorbiaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Kandelia obovata</td>
+<td>Rhizophoraceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Rhizophora apiculata</td>
+<td>Rhizophoraceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Cladopus chinensis</td>
+<td>Podostemaceae</td>
+<td>Malpighiales</td>
+</tr>
+<tr>
+<td>Pyrus communis</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Prunus dulcis</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Pyrus betulifolia</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Eriobotrya japonica</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Malus baccata</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Fragaria nilgerrensis</td>
+<td>PRosaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Parasponia andersonii</td>
+<td>Cannabaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Trema orientalis</td>
+<td>Cannabaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Humulus lupulus</td>
+<td>Cannabaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Cannabis sativa</td>
+<td>Cannabaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Boehmeria nivea</td>
+<td>Urticaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Ziziphus jujuba</td>
+<td>Rhamnaceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Morus notabilis</td>
+<td>Moraceae</td>
+<td>Rosales</td>
+</tr>
+<tr>
+<td>Tripterygium wilfordii</td>
+<td>Celastraceae</td>
+<td>Rosales</td>
+</tr>
+</table>
+<h3><a name='1'>基因组（Reference genome）</a></h3>
+<a href="/gb/genomedata/data/ptrv41/Ptrichocarpa_533_v4.0.fa" download="Ptrichocarpa_533_v4.0.fa"><h4>&bull;&nbsp;&nbsp;Ptrv41</h4></a>
+<a href="‪/gb/genomedata/data/ptrv41/cytoband.Ptrv41.txt" download="cytoband.Ptrv41.txt"><h4>&bull;&nbsp;cytoBand</h4></a>
+<a href="‪/gb/genomedata/data/ptrv41/aln.sorted_v0.vcf.gz" download="aln.sorted_v0.vcf.gz"><h4>&bull;&nbsp;SNP</h4></a>
+<a href="‪ /gb/genomedata/data/ptrv41/GENES.Ptrv41.sorted.txt" download="GENES.Ptrv41.sorted.txt"><h4>&bull;&nbsp;Genes</h4></a>
+<h3><a name='2'>Gene</a></h3>
+<a href="/gb/genomedata/data/ptrv41/Ptrichocarpa_533_v4.1.gene_exons.bb" download="Ptrichocarpa_533_v4.1.gene_exons.bb"><h4>&bull;&nbsp;PtrGene</h4></a>
+<h3><a name='3'>Variant</a></h3>
+<a href="/gb/genomedata/data/ptrv41/aln.sorted_v0.vcf.gz" download="aln.sorted_v0.vcf.gz"><h4>&bull;&nbsp;HeteV</h4></a>
+<h3><a name='4'>Regulation</a></h3>
+<a href="/gb/genomedata/data/ptrv41/Populus_trichocarpa.miRNA.bed.gz" download="Populus_trichocarpa.miRNA.bed.gz"><h4>&bull;&nbsp;miRNA</h4></a>
+<h3><a name='5'>RNASeq_leaf</a></h3>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864411/ERR1864411.bw" download="ERR1864411.bw"><h4>&bull;&nbsp;ERR1864411_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864412/ERR1864412.bw" download="ERR1864412.bw"><h4>&bull;&nbsp;ERR1864412_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864413/ERR1864413.bw" download="ERR1864413.bw"><h4>&bull;&nbsp;ERR1864413_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864414/ERR1864414.bw" download="ERR1864414.bw"><h4>&bull;&nbsp;ERR1864414_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864415/ERR1864415.bw" download="ERR1864415.bw"><h4>&bull;&nbsp;ERR1864415_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864416/ERR1864416.bw" download="ERR1864416.bw"><h4>&bull;&nbsp;ERR1864416_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864417/ERR1864417.bw" download="ERR1864417.bw"><h4>&bull;&nbsp;ERR1864417_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864418/ERR1864418.bw" download="ERR1864418.bw"><h4>&bull;&nbsp;ERR1864418_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864419/ERR1864419.bw" download="ERR1864419.bw"><h4>&bull;&nbsp;ERR1864419_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864420/ERR1864420.bw" download="ERR1864420.bw"><h4>&bull;&nbsp;ERR1864420_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864421/ERR1864421.bw" download="ERR1864421.bw"><h4>&bull;&nbsp;ERR1864421_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864422/ERR1864422.bw" download="ERR1864422.bw"><h4>&bull;&nbsp;ERR1864422_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864423/ERR1864423.bw" download="ERR1864423.bw"><h4>&bull;&nbsp;ERR1864423_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864424/ERR1864424.bw" download="ERR1864424.bw"><h4>&bull;&nbsp;ERR1864424_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864425/ERR1864425.bw" download="ERR1864425.bw"><h4>&bull;&nbsp;ERR1864425_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864426/ERR1864426.bw" download="ERR1864426.bw"><h4>&bull;&nbsp;ERR1864426_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864427/ERR1864427.bw" download="ERR1864427.bw"><h4>&bull;&nbsp;ERR1864427_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864428/ERR1864428.bw" download="ERR1864428.bw"><h4>&bull;&nbsp;ERR1864428_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864429/ERR1864429.bw" download="ERR1864429.bw"><h4>&bull;&nbsp;ERR1864429_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864431/ERR1864431.bw" download="ERR1864431.bw"><h4>&bull;&nbsp;ERR1864431_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864432/ERR1864432.bw" download="ERR1864432.bw"><h4>&bull;&nbsp;ERR1864432_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864433/ERR1864433.bw" download="ERR1864433.bw"><h4>&bull;&nbsp;ERR1864433_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864434/ERR1864434.bw" download="ERR1864434.bw"><h4>&bull;&nbsp;ERR1864434_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864435/ERR1864435.bw" download="ERR1864435.bw"><h4>&bull;&nbsp;ERR1864435_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864436/ERR1864436.bw" download="ERR1864436.bw"><h4>&bull;&nbsp;ERR1864436_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864437/ERR1864437.bw" download="ERR1864437.bw"><h4>&bull;&nbsp;ERR1864437_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472994/SRR3472994.bw" download="SRR3472994.bw"><h4>&bull;&nbsp;SRR3472994_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472995/SRR3472995.bw" download="SRR3472995.bw"><h4>&bull;&nbsp;SRR3472995_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472996/SRR3472996.bw" download="SRR3472996.bw"><h4>&bull;&nbsp;SRR3472996_Rt</h4></a>
+
+<h3>RNASeq_root</h3>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864438/ERR1864438.bw" download="ERR1864438.bw"><h4>&bull;&nbsp;ERR1864438_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864439/ERR1864439.bw" download="ERR1864439.bw"><h4>&bull;&nbsp;ERR1864439_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864440/ERR1864440.bw" download="ERR1864440.bw"><h4>&bull;&nbsp;ERR1864440_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864441/ERR1864441.bw" download="ERR1864441.bw"><h4>&bull;&nbsp;ERR1864441_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864442/ERR1864442.bw" download="ERR1864442.bw"><h4>&bull;&nbsp;ERR1864442_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864443/ERR1864443.bw" download="ERR1864443.bw"><h4>&bull;&nbsp;ERR1864443_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864444/ERR1864444.bw" download="ERR1864444.bw"><h4>&bull;&nbsp;ERR1864444_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864445/ERR1864445.bw" download="ERR1864445.bw"><h4>&bull;&nbsp;ERR1864445_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864446/ERR1864446.bw" download="ERR1864446.bw"><h4>&bull;&nbsp;ERR1864446_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864447/ERR1864447.bw" download="ERR1864447.bw"><h4>&bull;&nbsp;ERR1864447_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864448/ERR1864448.bw" download="ERR1864448.bw"><h4>&bull;&nbsp;ERR1864448_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864449/ERR1864449.bw" download="ERR1864449.bw"><h4>&bull;&nbsp;ERR1864449_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864450/ERR1864450.bw" download="ERR1864450.bw"><h4>&bull;&nbsp;ERR1864450_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864451/ERR1864451.bw" download="ERR1864451.bw"><h4>&bull;&nbsp;ERR1864451_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864452/ERR1864452.bw" download="ERR1864452.bw"><h4>&bull;&nbsp;ERR1864452_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864453/ERR1864453.bw" download="ERR1864453.bw"><h4>&bull;&nbsp;ERR1864453_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864454/ERR1864454.bw" download="ERR1864454.bw"><h4>&bull;&nbsp;ERR1864454_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864455/ERR1864455.bw" download="ERR1864455.bw"><h4>&bull;&nbsp;ERR1864455_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864456/ERR1864456.bw" download="ERR1864456.bw"><h4>&bull;&nbsp;ERR1864456_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864457/ERR1864457.bw" download="ERR1864457.bw"><h4>&bull;&nbsp;ERR1864457_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864458/ERR1864458.bw" download="ERR1864458.bw"><h4>&bull;&nbsp;ERR1864458_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864459/ERR1864459.bw" download="ERR1864459.bw"><h4>&bull;&nbsp;ERR1864459_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864460/ERR1864460.bw" download="ERR1864460.bw"><h4>&bull;&nbsp;ERR1864460_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864461/ERR1864461.bw" download="ERR1864461.bw"><h4>&bull;&nbsp;ERR1864461_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864462/ERR1864462.bw" download="ERR1864462.bw"><h4>&bull;&nbsp;ERR1864462_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864463/ERR1864463.bw" download="ERR1864463.bw"><h4>&bull;&nbsp;ERR1864463_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864464/ERR1864464.bw" download="ERR1864464.bw"><h4>&bull;&nbsp;ERR1864464_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473000/SRR3473000.bw" download="SRR3473000.bw"><h4>&bull;&nbsp;SRR3473000_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473001/SRR3473001.bw" download="SRR3473001.bw"><h4>&bull;&nbsp;SRR3473001_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473002/SRR3473002.bw" download="SRR3473002.bw"><h4>&bull;&nbsp;SRR3473002_Rt</h4></a>
+
+<h3>RNASeq_stem</h3>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864465/ERR1864465.bw" download="ERR1864465.bw"><h4>&bull;&nbsp;ERR1864465_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864466/ERR1864466.bw" download="ERR1864466.bw"><h4>&bull;&nbsp;ERR1864466_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864466/ERR1864467.bw" download="ERR1864467.bw"><h4>&bull;&nbsp;ERR1864467_Ct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864468/ERR1864468.bw" download="ERR1864468.bw"><h4>&bull;&nbsp;ERR1864468_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864469/ERR1864469.bw" download="ERR1864469.bw"><h4>&bull;&nbsp;ERR1864469_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864470/ERR1864470.bw" download="ERR1864470.bw"><h4>&bull;&nbsp;ERR1864470_Ltct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864471/ERR1864471.bw" download="ERR1864471.bw"><h4>&bull;&nbsp;ERR1864471_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864472/ERR1864472.bw" download="ERR1864472.bw"><h4>&bull;&nbsp;ERR1864472_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864473/ERR1864473.bw" download="ERR1864473.bw"><h4>&bull;&nbsp;ERR1864473_Pd</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864474/ERR1864474.bw" download="ERR1864474.bw"><h4>&bull;&nbsp;ERR1864474_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864475/ERR1864475.bw" download="ERR1864475.bw"><h4>&bull;&nbsp;ERR1864475_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864476/ERR1864476.bw" download="ERR1864476.bw"><h4>&bull;&nbsp;ERR1864476_Ltht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864477/ERR1864477.bw" download="ERR1864477.bw"><h4>&bull;&nbsp;ERR1864477_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864478/ERR1864478.bw" download="ERR1864478.bw"><h4>&bull;&nbsp;ERR1864478_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864479/ERR1864479.bw" download="ERR1864479.bw"><h4>&bull;&nbsp;ERR1864479_Ltst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864480/ERR1864480.bw" download="ERR1864480.bw"><h4>&bull;&nbsp;ERR1864480_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864481/ERR1864481.bw" download="ERR1864481.bw"><h4>&bull;&nbsp;ERR1864481_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864482/ERR1864482.bw" download="ERR1864482.bw"><h4>&bull;&nbsp;ERR1864482_Stct</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864483/ERR1864483.bw" download="ERR1864483.bw"><h4>&bull;&nbsp;ERR1864483_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864484/ERR1864484.bw" download="ERR1864484.bw"><h4>&bull;&nbsp;ERR1864484_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864485/ERR1864485.bw" download="ERR1864485.bw"><h4>&bull;&nbsp;ERR1864485_Std</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864486/ERR1864486.bw" download="ERR1864486.bw"><h4>&bull;&nbsp;ERR1864486_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864487/ERR1864487.bw" download="ERR1864487.bw"><h4>&bull;&nbsp;ERR1864487_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864488/ERR1864488.bw" download="ERR1864488.bw"><h4>&bull;&nbsp;ERR1864488_Stht</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864489/ERR1864489.bw" download="ERR1864489.bw"><h4>&bull;&nbsp;ERR1864489_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864490/ERR1864490.bw" download="ERR1864490.bw"><h4>&bull;&nbsp;ERR1864490_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/ERR1864491/ERR1864491.bw" download="ERR1864491.bw"><h4>&bull;&nbsp;ERR1864491_Stst</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473003/SRR3473003.bw" download="SRR3473003.bw"><h4>&bull;&nbsp;SRR3473003_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473004/SRR3473004.bw" download="SRR3473004.bw"><h4>&bull;&nbsp;SRR3473004_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473005/SRR3473005.bw" download="SRR3473005.bw"><h4>&bull;&nbsp;SRR3473005_Rt</h4></a>
+
+<h3>RNASeq_roottip</h3>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472991/SRR3472991.bw" download="SRR3472991.bw"><h4>&bull;&nbsp;SRR3472991_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472992/SRR3472992.bw" download="SRR3472992.bw"><h4>&bull;&nbsp;SRR3472992_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472993/SRR3472993.bw" download="SRR3472993.bw"><h4>&bull;&nbsp;SRR3472993_Rt</h4></a>
+
+<h3>RNASeq_Phloem</h3>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472997/SRR3472997.bw" download="SRR3472997.bw"><h4>&bull;&nbsp;SRR3472997_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472998/SRR3472998.bw" download="SRR3472998.bw"><h4>&bull;&nbsp;SRR3472998_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3472999/SRR3472999.bw" download="SRR3472999.bw"><h4>&bull;&nbsp;SRR3472999_Rt</h4></a>
+
+<h3>RNASeq_Fibroblast</h3>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473006/SRR3473006.bw" download="SRR3473006.bw"><h4>&bull;&nbsp;SRR3473006_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473007/SRR3473007.bw" download="SRR3473007.bw"><h4>&bull;&nbsp;SRR3473007_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473008/SRR3473008.bw" download="SRR3473008.bw"><h4>&bull;&nbsp;SRR3473008_Rt</h4></a>
+
+<h3>RNASeq_Ductal cells</h3>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473009/SRR3473009.bw" download="SRR3473009.bw"><h4>&bull;&nbsp;SRR3473009_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473010/SRR3473010.bw" download="SRR3473010.bw"><h4>&bull;&nbsp;SRR3473010_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473011/SRR3473011.bw" download="SRR3473011.bw"><h4>&bull;&nbsp;SRR3473011_Rt</h4></a>
+
+<h3>RNASeq_FDR</h3>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473012/SRR3473012.bw" download="SRR3473012.bw"><h4>&bull;&nbsp;SRR3473012_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473013/SRR3473013.bw" download="SRR3473013.bw"><h4>&bull;&nbsp;SRR3473013_Rt</h4></a>
+<a href="/gb/genomedata/data/03bamTobw/SRR3473014/SRR3473014.bw" download="SRR3473014.bw"><h4>&bull;&nbsp;SRR3473014_Rt</h4></a>
+
+<h3><a name='6'>Sequence Feature</a></h3>
+<a href="/gb/genomedata/data/Ptrichocarpa_533_v4.0.bw/1.bw" download="Ptrichocarpa_533_v4.0.bw/1.bw"><h4>&bull;&nbsp;GCPercent</h4></a>
+<h3><a name='7'>Plant Genomes</a></h3>
+<a href="/gb/genomedata/Rosales/Urticaceae/Boehmeria_nivea/Boehmeria_nivea.fa" download="Boehmeria_nivea.fa"><h4>&bull;&nbsp;Boehmeria_nivea</h4></a>
+</div>
+</div>
+<footer>
+	<p><a href="home.html">Home</a> |  <a href="browser.html" target="_blank">Genome Browser</a> | <a href="blast.html" target="_blank">Blast</a> | <a href="downloads.html">Downloads</a> | <a href="tutorial.html">Tutorial</a> | <a href="mailto:PopulusGenomeBrowser@gmail.com">Contact</a></p>
+	<p><a>Copyright©NEFU</a></p>
+</footer>
+</body>
+</html>	
