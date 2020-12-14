@@ -1,25 +1,51 @@
-/*
 	document.getElementById("div").onclick = function() {
-			document.getElementById("box").style.display = "block";
-			document.getElementById("cover").style.display = "block";
-		 }
-		 */
+		document.getElementById("box").style.display = "block";
+		document.getElementById("cover").style.display = "block";
+		}
+		 
 	document.getElementById("cover").onclick = function() { 
 		if (document.getElementById("box").style.display == "block") {
     		document.getElementById("box").style.display = "none";
     		document.getElementById("cover").style.display = "none";
   			}
+		if(document.getElementById('window').getElementsByClassName("detail").length!=0){
+				var temp=document.getElementById('window').getElementsByClassName("detail")[0].id.replace('div','')
+				//document.getElementById(temp).active=0;
+				document.getElementById('window').removeChild(document.getElementById('div'+temp));
+				document.getElementById("cover").style.display = "none";
+				document.getElementById("cover").style.backgroundColor='#000';
+			}
 		}
 	document.getElementById("tanchuang-right").onclick = function() {
 		document.getElementById("box").style.display = "none";
     	document.getElementById("cover").style.display = "none";
 	}
+	
+	document.getElementById("tree").onclick = function(){
+		document.getElementById("plantgenomes").style.display = "block";
+		document.getElementById("treecover").style.display = "block";
+		} 
+	document.getElementById("treecover").onclick = function() { 
+		if (document.getElementById("plantgenomes").style.display == "block") {
+    		document.getElementById("plantgenomes").style.display = "none";
+    		document.getElementById("treecover").style.display = "none";
+  			}
+	}
+	document.getElementById("treeclose").onclick = function() {
+		document.getElementById("plantgenomes").style.display = "none";
+    	document.getElementById("treecover").style.display = "none";
+	}	
+	
 	var scroll1 = document.getElementById('scroll1');
     var bar1 = document.getElementById('bar1');
     var mask1 = document.getElementById('mask1');
     //var ptxt = document.getElementsByTagName('p')[0];
     var barleft = 0;
 	
+
+     document.body.onselectstart = document.body.ondrag = function(){
+　　　　return false;
+　　}
     /*bar1.onmousedown = function(event){
       var event = event || window.event;
       var leftVal = event.clientX - this.offsetLeft;
@@ -51,6 +77,7 @@
     var mask = document.getElementById('mask');
     //var ptxt = document.getElementsByTagName('p')[0];
     var barleft = 0;
+	/*
     bar.onmousedown = function(event){
       var event = event || window.event;
       var leftVal = event.clientX - this.offsetLeft;
@@ -74,7 +101,7 @@
     document.onmouseup = function(){
       document.onmousemove = null; //弹起鼠标不做任何操作
     }
-
+*/
 /*	
 	for(var i=1;i<=5;i++)
 		{
@@ -170,3 +197,53 @@
 				b.appendChild(a);
 				}	
 		}*/
+	document.getElementById("chrbutton").onclick = function() {
+		document.getElementById("cover3").style.display = "block";
+		var b = document.getElementById('chrmenu');
+		b.style.width=document.getElementById('chrname').offsetWidth+document.getElementById('chrbutton').offsetWidth-2+'px';
+		if(document.getElementById("chrmenu").style.display=="none"){
+			if(document.getElementById("control").style.display == "none"){
+				document.getElementById("chrmenu").style.top="90px";
+				}
+			else {document.getElementById("chrmenu").style.top="175px";}
+			document.getElementById("chrmenu").style.display="block";
+		}
+		else if(document.getElementById("chrmenu").style.display=="block"){
+			document.getElementById("chrmenu").style.display="none";
+		}
+	
+	}
+	document.getElementById("cover3").onclick = function() { 
+		if (document.getElementById("chrmenu").style.display == "block") {
+    		document.getElementById("chrmenu").style.display = "none";
+    		document.getElementById("cover3").style.display = "none";
+  		}
+	}
+	document.getElementById("buttonmove").onclick = function() {
+		if(document.getElementById("bottom").style.display == "none")
+		{document.getElementById("bottom").style.display = "block";
+		document.getElementById("location").style.marginTop='40px';
+		}
+		
+		if(document.getElementById("control").style.display == "block")
+		{document.getElementById("control").style.display = "none";}
+		
+		if(document.getElementById("chrmenu").style.display=="block"){
+			document.getElementById("chrmenu").style.display="none";
+		}
+
+	}
+	
+	document.getElementById("hidebutton").onclick = function() {
+		if(document.getElementById("control").style.display == "none")
+		{document.getElementById("control").style.display = "block";
+		document.getElementById("location").style.marginTop='10px';}
+		
+		if(document.getElementById("bottom").style.display == "block")
+		{document.getElementById("bottom").style.display = "none";}
+		
+		if(document.getElementById("chrmenu").style.display=="block"){
+			document.getElementById("chrmenu").style.display="none";
+		}
+		
+	}

@@ -70,14 +70,23 @@ $(function(){
 					track_div.attr('class','whxdiv');
 					var pic_div=$('<div>'+track_id+'</div>');
 					pic_div.attr('class','pic_div');
+					
+					var groupname=group_id;
+					var groupname=groupname.replace("_"," ");
+					var description=$('<div>'+groupname+'</div>');
+					description.attr('class','description');
+					track_div.append(description);
 					track_div.append(pic_div);
+					
                     track_div.hover(function(){
-    						$(this).addClass('pic_hover');
+    						$(this).css("background-color","#C7EAFE");
+							$(this).children("button").css("background-color","#C7EAFE");
 					},
 					function(){
-    				$(this).removeClass('pic_hover');		
+    				$(this).css("background-color","#FBFDFF");	
+					$(this).children("button").css("background-color","#FBFDFF");	
 					});
-                    var btn_del = $('<button value="删除">x</button>')
+                    var btn_del = $('<button value="删除"></button>')
 					btn_del.attr('class','whxdelete')
                     track_div.append(btn_del);
 
@@ -191,15 +200,23 @@ $(function(){
 						var pic_div=$('<div>'+track_id+'</div>');
 						pic_div.attr('class','pic_div');
 						track_div.append(pic_div);
-
-                        var btn_del = $('<button value="删除">x</button>')
+						
+						var groupname=group_id;
+						var groupname=groupname.replace("_"," ");
+						var description=$('<div>'+groupname+'</div>');
+						description.attr('class','description');
+						track_div.append(description);
+						
+                        var btn_del = $('<button value="删除"></button>')
 					    btn_del.attr('class','whxdelete')
                         track_div.append(btn_del);
 						track_div.hover(function(){
-    						$(this).addClass('pic_hover');
+    						$(this).css("background-color","#C7EAFE");
+							$(this).children("button").css("background-color","#C7EAFE");
 						},
 						function(){
-							$(this).removeClass('pic_hover');
+							$(this).css("background-color","#FBFDFF");
+							$(this).children("button").css("background-color","#FBFDFF");
 						});
                         btn_del.bind('click',function(){
                             var track_id=$(this).parent().attr('id').replace("div","")
@@ -294,15 +311,23 @@ $(function(){
 						var pic_div=$('<div>'+track_id+'</div>');
 						pic_div.attr('class','pic_div');
 						track_div.append(pic_div);
-
-                        var btn_del = $('<button value="删除">x</button>')
+						
+						var groupname=group_id;
+						var groupname=groupname.replace("_"," ");
+						var description=$('<div>'+groupname+'</div>');
+						description.attr('class','description');
+						track_div.append(description);
+						
+                        var btn_del = $('<button value="删除"></button>')
 					    btn_del.attr('class','whxdelete')
                         track_div.append(btn_del);
 						track_div.hover(function(){
-    						$(this).addClass('pic_hover');
+    						$(this).css("background-color","#C7EAFE");
+							$(this).children("button").css("background-color","#C7EAFE");
 						},
 						function(){
-							$(this).removeClass('pic_hover');
+							$(this).css("background-color","#FBFDFF");
+							$(this).children("button").css("background-color","#FBFDFF");
 						});
                         btn_del.bind('click',function(){
                             var track_id=$(this).parent().attr('id').replace("div","")
@@ -341,15 +366,23 @@ $(function(){
 			var pic_div=$('<div>'+trackKeys[j]+'</div>');
 			pic_div.attr('class','pic_div');
 			track_div.append(pic_div);
-
-            var btn_del = $('<button value="删除">x</button>')
+			
+			var groupname=group_id;
+			var groupname=groupname.replace("_"," ");
+			var description=$('<div>'+groupname+'</div>');
+			description.attr('class','description');
+			track_div.append(description);
+			
+            var btn_del = $('<button value="删除"></button>')
 			btn_del.attr('class','whxdelete')
             track_div.append(btn_del);
 			track_div.hover(function(){
-    			$(this).addClass('pic_hover');
+    			$(this).css("background-color","#C7EAFE");
+				$(this).children("button").css("background-color","#C7EAFE");
 			},
 			function(){
-    			$(this).removeClass('pic_hover');
+    			$(this).css("background-color","#FBFDFF");
+				$(this).children("button").css("background-color","#FBFDFF");
 			});
             btn_del.bind('click',function(){
                 var group_id=$(this).parent().attr('name');
